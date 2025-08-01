@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProjectDetail.css';
@@ -6,6 +6,11 @@ import './ProjectDetail.css';
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
+
+  // 페이지 로드 시 스크롤을 맨 위로
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const projectsData = {
     'dongne': {

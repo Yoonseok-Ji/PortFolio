@@ -43,7 +43,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="section skills">
+    <section id="skills" className="skills">
       <motion.div
         ref={ref}
         className="skills-container"
@@ -52,7 +52,7 @@ const Skills = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.h2 className="section-title" variants={itemVariants}>
-          기술 스택
+          Skills
         </motion.h2>
 
         <div className="skills-content">
@@ -62,7 +62,7 @@ const Skills = () => {
               {frontendSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="skill-item card"
+                  className="skill-item"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -80,7 +80,7 @@ const Skills = () => {
               {cloudDevOpsSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="skill-item card"
+                  className="skill-item"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}

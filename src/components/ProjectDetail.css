@@ -47,23 +47,23 @@
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .project-subtitle {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
 }
 
 .project-description {
   font-size: 1.2rem;
   line-height: 1.8;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* iMac Mockup Styles */
+/* iMac Mockup Styles - 크기 증가 */
 .imac-mockup {
   position: relative;
   display: flex;
@@ -73,12 +73,12 @@
 }
 
 .imac-screen {
-  width: 400px;
-  height: 250px;
+  width: 600px; /* 400px에서 600px로 증가 */
+  height: 375px; /* 250px에서 375px로 증가 */
   background: #1a1a1a;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 12px; /* 8px에서 12px로 증가 */
+  padding: 12px; /* 8px에서 12px로 증가 */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   position: relative;
 }
 
@@ -86,30 +86,30 @@
   width: 100%;
   height: 100%;
   background: #ffffff;
-  border-radius: 4px;
+  border-radius: 6px; /* 4px에서 6px로 증가 */
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .browser-bar {
-  height: 30px;
+  height: 45px; /* 30px에서 45px로 증가 */
   background: #f0f0f0;
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 18px; /* 12px에서 18px로 증가 */
   border-bottom: 1px solid #ddd;
 }
 
 .browser-buttons {
   display: flex;
-  gap: 6px;
-  margin-right: 12px;
+  gap: 9px; /* 6px에서 9px로 증가 */
+  margin-right: 18px; /* 12px에서 18px로 증가 */
 }
 
 .browser-buttons span {
-  width: 12px;
-  height: 12px;
+  width: 18px; /* 12px에서 18px로 증가 */
+  height: 18px; /* 12px에서 18px로 증가 */
   border-radius: 50%;
 }
 
@@ -128,9 +128,9 @@
 .address-bar {
   flex: 1;
   background: white;
-  border-radius: 4px;
-  padding: 4px 12px;
-  font-size: 11px;
+  border-radius: 6px; /* 4px에서 6px로 증가 */
+  padding: 6px 18px; /* 4px 12px에서 6px 18px로 증가 */
+  font-size: 14px; /* 11px에서 14px로 증가 */
   color: #666;
   border: 1px solid #ddd;
 }
@@ -149,39 +149,40 @@
 }
 
 .preview-placeholder h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem; /* 1.2rem에서 1.8rem로 증가 */
+  margin-bottom: 0.8rem; /* 0.5rem에서 0.8rem로 증가 */
   color: #374151;
 }
 
 .preview-placeholder p {
-  font-size: 0.9rem;
+  font-size: 1.2rem; /* 0.9rem에서 1.2rem로 증가 */
   margin: 0;
 }
 
 .imac-stand {
-  width: 60px;
-  height: 40px;
+  width: 90px; /* 60px에서 90px로 증가 */
+  height: 60px; /* 40px에서 60px로 증가 */
   background: linear-gradient(135deg, #e5e7eb, #d1d5db);
-  margin-top: -2px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -3px; /* -2px에서 -3px로 증가 */
+  border-radius: 0 0 12px 12px; /* 8px에서 12px로 증가 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 4px 8px에서 6px 12px로 증가 */
 }
 
 .imac-base {
-  width: 120px;
-  height: 8px;
+  width: 180px; /* 120px에서 180px로 증가 */
+  height: 12px; /* 8px에서 12px로 증가 */
   background: linear-gradient(135deg, #e5e7eb, #d1d5db);
   border-radius: 50px;
-  margin-top: -4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -6px; /* -4px에서 -6px로 증가 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* 2px 4px에서 3px 6px로 증가 */
 }
 
 .project-content {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
   padding: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .content-grid {
@@ -191,10 +192,11 @@
 }
 
 .project-section {
-  background: #f8fafc;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   padding: 2.5rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .project-section.full-width {
@@ -204,16 +206,16 @@
 .project-section h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1f2937;
+  color: white;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .project-section p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .features-list,
@@ -227,20 +229,21 @@
 
 .features-list li,
 .role-list li {
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   border-radius: 12px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
   font-size: 1.1rem;
-  color: #374151;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .features-list li:hover,
 .role-list li:hover {
   transform: translateX(8px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .tech-stack {
@@ -250,32 +253,35 @@
 }
 
 .tech-tag {
-  background: #3b82f6;
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tech-tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .architecture {
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
   padding: 2.5rem;
   border-radius: 15px;
-  border: 3px dashed #667eea;
+  border: 3px dashed rgba(255, 255, 255, 0.5);
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .architecture p {
   font-size: 1.3rem;
-  color: #1f2937;
+  color: white;
   font-weight: 600;
   margin: 0;
 }
@@ -296,8 +302,8 @@
   }
 
   .imac-screen {
-    width: 350px;
-    height: 220px;
+    width: 500px;
+    height: 315px;
   }
 
   .content-grid {
@@ -324,8 +330,8 @@
   }
 
   .imac-screen {
-    width: 300px;
-    height: 190px;
+    width: 400px;
+    height: 250px;
   }
 
   .project-content {
@@ -343,8 +349,8 @@
   }
 
   .imac-screen {
-    width: 280px;
-    height: 175px;
+    width: 350px;
+    height: 220px;
   }
 
   .project-content {

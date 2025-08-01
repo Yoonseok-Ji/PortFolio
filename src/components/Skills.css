@@ -30,17 +30,6 @@
   position: relative;
 }
 
-.category-title::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-  z-index: 1;
-}
-
 .category-title::after {
   content: '';
   position: absolute;
@@ -51,7 +40,6 @@
   height: 3px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 2px;
-  z-index: 2;
 }
 
 .skills-grid {
@@ -76,7 +64,7 @@
   cursor: pointer;
   width: 100%;
   max-width: 200px;
-  border: 2px solid transparent;
+  border: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
 }
@@ -99,7 +87,7 @@
 .skill-item:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-  border-color: #667eea;
+  border-color: #e2e8f0;
 }
 
 .skill-icon {
