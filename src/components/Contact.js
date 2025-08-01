@@ -69,21 +69,19 @@ const Contact = () => {
             <h3>연락처 정보</h3>
             <div className="contact-items">
               {contactInfo.map((item, index) => (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={item.link}
                   className="contact-item"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  target={item.link.startsWith('http') ? '_blank' : '_self'}
-                  rel={item.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
                 >
                   <div className="contact-icon">{item.icon}</div>
                   <div className="contact-details">
                     <h4>{item.title}</h4>
                     <p>{item.value}</p>
                   </div>
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -103,8 +101,9 @@ const Contact = () => {
                   className="social-item"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
                 >
                   <div className="social-icon">{social.icon}</div>
                   <span>{social.name}</span>

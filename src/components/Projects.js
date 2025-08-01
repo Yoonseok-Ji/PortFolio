@@ -14,24 +14,27 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 'autoalarm',
+      title: 'CoinAlarm',
+      subtitle: '오토에버 스쿨',
+      description: '가상화폐 자동 알림 서비스',
+      technologies: ['K8s', 'AWS', 'Jenkins', 'React'],
+      color: '#3b82f6'
+    },
+    {
       id: 'dongne',
       title: '동네형',
+      subtitle: 'UMC',
       description: '트레이너와 회원 간 PT 매칭 웹 서비스',
-      technologies: ['React', 'Node.js', 'MySQL', 'AWS'],
-      color: '#3b82f6'
+      technologies: ['React', 'JavaScript', 'Rest API'],
+      color: '#10b981'
     },
     {
       id: 'ttoon',
       title: 'TTOON',
+      subtitle: '졸업프로젝트',
       description: 'AI가 만들어주는 일기를 네컷 만화로 바꿔주는 웹서비스',
-      technologies: ['React', 'Python', 'FastAPI', 'OpenAI API'],
-      color: '#10b981'
-    },
-    {
-      id: 'autoalarm',
-      title: 'AutoAlarm',
-      description: '가상화폐 자동 알림 서비스',
-      technologies: ['Python', 'Docker', 'Kubernetes', 'Jenkins'],
+      technologies: ['React', 'AWS', 'RestApi', 'Jenkins'],
       color: '#f59e0b'
     }
   ];
@@ -64,14 +67,16 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="project-header" style={{ borderTopColor: project.color }}>
                 <div className="project-icon" style={{ backgroundColor: project.color }}>
                   {project.title.charAt(0)}
                 </div>
-                <h3>{project.title}</h3>
+                <div className="project-title-section">
+                  <h3>{project.title}</h3>
+                  <span className="project-subtitle">{project.subtitle}</span>
+                </div>
               </div>
               
               <p className="project-description">{project.description}</p>
@@ -89,23 +94,6 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div 
-          className="blog-section"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <p>더 자세한 개발 과정이 궁금하다면?</p>
-          <a
-            href="https://velog.io/@dbstjrgudsla/posts"
-            className="blog-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            블로그 방문하기
-          </a>
         </motion.div>
       </motion.div>
     </section>

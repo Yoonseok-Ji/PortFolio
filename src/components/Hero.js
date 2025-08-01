@@ -47,7 +47,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 클라우드 엔지니어를 희망하는<br />
-                <span className="highlight">지윤석</span>입니다
+                <span className="name-highlight">지윤석</span>입니다
               </motion.h1>
 
               <motion.div 
@@ -56,96 +56,56 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <div className="info-item">
-                  <span className="info-label">학력</span>
-                  <span className="info-value">홍익대학교 컴퓨터공학과</span>
+                <div className="info-item2">
+                  <span className="info-label">전공</span>
+                  <span className="info-value">컴퓨터공학과</span>
                 </div>
-                <div className="info-item">
+                <div className="info-item2">
+                  <span className="info-label">관심분야</span>
+                  <span className="info-value">클라우드 인프라, DevOps, CI/CD</span>
+                </div>
+                <div className="info-item2">
                   <span className="info-label">취미</span>
                   <span className="info-value">축구, 농구, 작곡</span>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                className="characteristics"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                <h3>특징</h3>
-                <div className="char-items">
-                  <div className="char-item">
-                    <div className="char-icon">💻</div>
-                    <div className="char-text">
-                      <h4>Frontend to Cloud</h4>
-                      <p>웹 개발부터 클라우드까지</p>
-                    </div>
-                  </div>
-                  <div className="char-item">
-                    <div className="char-icon">🚀</div>
-                    <div className="char-text">
-                      <h4>Continuous Learning</h4>
-                      <p>끊임없는 학습과 성장</p>
-                    </div>
-                  </div>
-                  <div className="char-item">
-                    <div className="char-icon">🤝</div>
-                    <div className="char-text">
-                      <h4>Team Collaboration</h4>
-                      <p>팀워크와 소통 중시</p>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* 타임라인 섹션 */}
+          {/* 학력 및 활동 섹션 */}
           <motion.div 
-            className="timeline-section"
+            className="education-section"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             <h2>학력 및 활동</h2>
             <div className="timeline">
-              <div className="timeline-item">
-                <div className="timeline-date">2019.03</div>
+              <div className="timeline-item left">
                 <div className="timeline-content">
-                  <h4>홍익대학교 컴퓨터공학과 입학</h4>
-                  <p>학사 과정 시작</p>
+                  <h4>홍익대학교 컴퓨터공학과 졸업</h4>
+                  <div className="timeline-period">2019.03 ~ 2025.02</div>
                 </div>
               </div>
               
-              <div className="timeline-item">
-                <div className="timeline-date">2023.09</div>
+              <div className="timeline-item right">
                 <div className="timeline-content">
-                  <h4>UMC 프론트엔드 팀장</h4>
-                  <p>대학생 IT 연합동아리 활동</p>
+                  <h4>육군 만기제대 (군사경찰)</h4>
+                  <div className="timeline-period">2020.06 ~ 2021.12</div>
                 </div>
               </div>
               
-              <div className="timeline-item">
-                <div className="timeline-date">2024.02</div>
+              <div className="timeline-item left">
                 <div className="timeline-content">
-                  <h4>UMC 활동 완료</h4>
-                  <p>프론트엔드 팀장 역할 수행</p>
+                  <h4>UMC(개발연합동아리) 프론트엔드 팀장</h4>
+                  <div className="timeline-period">2023.09 ~ 2024.02</div>
                 </div>
               </div>
               
-              <div className="timeline-item">
-                <div className="timeline-date">2024.08</div>
+              <div className="timeline-item right">
                 <div className="timeline-content">
-                  <h4>현대오토에버 모빌리티 스쿨</h4>
-                  <p>클라우드 과정 시작</p>
-                </div>
-              </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-date">2025.02</div>
-                <div className="timeline-content">
-                  <h4>졸업 예정</h4>
-                  <p>학사 과정 완료 및 클라우드 과정 수료</p>
+                  <h4>현대 오토에버 모빌리티 SW스쿨 클라우드 과정 1기 수료</h4>
+                  <div className="timeline-period">2024.08 ~ 2025.02</div>
                 </div>
               </div>
             </div>
