@@ -25,7 +25,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            안녕하세요, <span className="blue-accent">개발자</span> 입니다
+            안녕하세요, <span className="blue-accent">지윤석</span> 입니다
           </motion.h1>
           
           <motion.p
