@@ -23,8 +23,8 @@ const About = () => {
         <div className="about-content">
           <motion.div 
             className="about-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3>안녕하세요, 지윤석입니다.</h3>
@@ -37,6 +37,44 @@ const About = () => {
             <p>
               주변 분위기를 좋게 만들고, 팀이 진짜 원하는 게 무엇인지 파악해 함께 만들어가는 걸 좋아합니다.
             </p>
+            
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <div className="highlight-icon">💻</div>
+                <div className="highlight-text">
+                  <h4>Frontend to Cloud</h4>
+                  <p>웹 개발부터 클라우드까지</p>
+                </div>
+              </div>
+              <div className="highlight-item">
+                <div className="highlight-icon">🚀</div>
+                <div className="highlight-text">
+                  <h4>Continuous Learning</h4>
+                  <p>끊임없는 학습과 성장</p>
+                </div>
+              </div>
+              <div className="highlight-item">
+                <div className="highlight-icon">🤝</div>
+                <div className="highlight-text">
+                  <h4>Team Collaboration</h4>
+                  <p>팀워크와 소통 중시</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="about-image"
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="image-placeholder">
+              <div className="image-content">
+                <div className="profile-icon">👨‍💻</div>
+                <p>프로필 사진</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.div>

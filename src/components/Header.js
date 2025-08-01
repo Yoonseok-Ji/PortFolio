@@ -36,7 +36,7 @@ const Header = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span>지윤석</span>
+          <span>Portfolio</span>
         </motion.div>
 
         <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>

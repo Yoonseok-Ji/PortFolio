@@ -34,17 +34,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            지윤석입니다
+            클라우드 엔지니어를 희망하는<br />
+            <span className="highlight">지윤석</span>입니다
           </motion.h1>
-          
-          <motion.div
-            className="hero-role"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            신입 클라우드 엔지니어
-          </motion.div>
 
           <motion.div 
             className="hero-resume"
@@ -52,24 +44,39 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="resume-item">
-              <div className="resume-category">학력</div>
-              <div className="resume-detail">
-                <span className="resume-title">홍익대학교 컴퓨터공학과</span>
-                <span className="resume-period">2019.03 - 2025.02</span>
+            <div className="resume-section">
+              <div className="resume-header">
+                <div className="resume-icon">🎓</div>
+                <h3>학력</h3>
+              </div>
+              <div className="resume-item">
+                <div className="resume-content">
+                  <div className="resume-title">홍익대학교 컴퓨터공학과</div>
+                  <div className="resume-subtitle">학사 과정</div>
+                </div>
+                <div className="resume-period">2019.03 - 2025.02</div>
               </div>
             </div>
             
-            <div className="resume-item">
-              <div className="resume-category">활동</div>
-              <div className="resume-details">
-                <div className="resume-detail">
-                  <span className="resume-title">UMC 프론트엔드 팀장</span>
-                  <span className="resume-period">2023.09 - 2024.02</span>
+            <div className="resume-section">
+              <div className="resume-header">
+                <div className="resume-icon">🚀</div>
+                <h3>활동</h3>
+              </div>
+              <div className="resume-items">
+                <div className="resume-item">
+                  <div className="resume-content">
+                    <div className="resume-title">UMC 프론트엔드 팀장</div>
+                    <div className="resume-subtitle">대학생 IT 연합동아리</div>
+                  </div>
+                  <div className="resume-period">2023.09 - 2024.02</div>
                 </div>
-                <div className="resume-detail">
-                  <span className="resume-title">현대오토에버 모빌리티 스쿨 클라우드 과정</span>
-                  <span className="resume-period">2024.08 - 2025.02</span>
+                <div className="resume-item">
+                  <div className="resume-content">
+                    <div className="resume-title">현대오토에버 모빌리티 스쿨</div>
+                    <div className="resume-subtitle">클라우드 과정</div>
+                  </div>
+                  <div className="resume-period">2024.08 - 2025.02</div>
                 </div>
               </div>
             </div>

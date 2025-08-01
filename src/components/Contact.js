@@ -59,15 +59,6 @@ const Contact = () => {
       >
         <h2 className="section-title">Contact</h2>
 
-        <motion.div 
-          className="contact-intro"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <p>새로운 기회나 협업에 대해 이야기하고 싶으시다면 언제든 연락주세요.</p>
-        </motion.div>
-
         <div className="contact-content">
           <motion.div 
             className="contact-info"

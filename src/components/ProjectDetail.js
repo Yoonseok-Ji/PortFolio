@@ -25,11 +25,7 @@ const ProjectDetail = () => {
         'REST API 설계 및 구현',
         'AWS 인프라 구축 및 배포'
       ],
-      screenshots: [
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500'
-      ]
+      color: '#3b82f6'
     },
     'ttoon': {
       title: 'TTOON',
@@ -48,11 +44,7 @@ const ProjectDetail = () => {
         '프론트엔드 인터페이스 구현',
         '이미지 처리 및 최적화'
       ],
-      screenshots: [
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500'
-      ]
+      color: '#10b981'
     },
     'autoalarm': {
       title: 'AutoAlarm',
@@ -72,11 +64,7 @@ const ProjectDetail = () => {
         'Kubernetes 배포 및 관리',
         'Jenkins CI/CD 파이프라인 구축'
       ],
-      screenshots: [
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500',
-        '/api/placeholder/800/500'
-      ]
+      color: '#f59e0b'
     }
   };
 
@@ -107,63 +95,123 @@ const ProjectDetail = () => {
           ← 돌아가기
         </button>
 
-        <div className="project-header">
-          <h1>{project.title}</h1>
-          <p className="project-subtitle">{project.subtitle}</p>
+        <div className="project-hero">
+          <div className="project-info">
+            <motion.h1 
+              className="project-title"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {project.title}
+            </motion.h1>
+            <motion.p 
+              className="project-subtitle"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {project.subtitle}
+            </motion.p>
+            <motion.p 
+              className="project-description"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              {project.description}
+            </motion.p>
+          </div>
+
+          <motion.div 
+            className="imac-mockup"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <div className="imac-screen">
+              <div className="screen-content">
+                <div className="browser-bar">
+                  <div className="browser-buttons">
+                    <span className="btn-close"></span>
+                    <span className="btn-minimize"></span>
+                    <span className="btn-maximize"></span>
+                  </div>
+                  <div className="address-bar">
+                    <span>{project.title.toLowerCase()}.com</span>
+                  </div>
+                </div>
+                <div className="website-preview">
+                  <div className="preview-placeholder">
+                    <h3>{project.title}</h3>
+                    <p>웹사이트 스크린샷</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="imac-stand"></div>
+            <div className="imac-base"></div>
+          </motion.div>
         </div>
 
         <div className="project-content">
-          <section className="project-section">
-            <h2>프로젝트 소개</h2>
-            <p>{project.description}</p>
-          </section>
+          <div className="content-grid">
+            <motion.section 
+              className="project-section"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h2>주요 기능</h2>
+              <ul className="features-list">
+                {project.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </motion.section>
 
-          <section className="project-section">
-            <h2>주요 기능</h2>
-            <ul className="features-list">
-              {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </section>
+            <motion.section 
+              className="project-section"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              <h2>사용 기술</h2>
+              <div className="tech-stack">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag" style={{ backgroundColor: project.color }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.section>
 
-          <section className="project-section">
-            <h2>사용 기술</h2>
-            <div className="tech-stack">
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </section>
+            <motion.section 
+              className="project-section full-width"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <h2>시스템 아키텍처</h2>
+              <div className="architecture" style={{ borderColor: project.color }}>
+                <p>{project.architecture}</p>
+              </div>
+            </motion.section>
 
-          <section className="project-section">
-            <h2>시스템 아키텍처</h2>
-            <div className="architecture">
-              <p>{project.architecture}</p>
-            </div>
-          </section>
-
-          <section className="project-section">
-            <h2>담당 역할</h2>
-            <ul className="role-list">
-              {project.myRole.map((role, index) => (
-                <li key={index}>{role}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="project-section">
-            <h2>스크린샷</h2>
-            <div className="screenshots">
-              {project.screenshots.map((screenshot, index) => (
-                <div key={index} className="screenshot">
-                  <div className="screenshot-placeholder">
-                    스크린샷 {index + 1}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+            <motion.section 
+              className="project-section full-width"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              <h2>담당 역할</h2>
+              <ul className="role-list">
+                {project.myRole.map((role, index) => (
+                  <li key={index}>{role}</li>
+                ))}
+              </ul>
+            </motion.section>
+          </div>
         </div>
       </motion.div>
     </div>
