@@ -65,26 +65,26 @@ const Contact = () => {
     {
       icon: '📧',
       title: '이메일',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'yoonseok0107@naver.com',
+      link: 'mailto:yoonseok0107@naver.com'
     },
     {
       icon: '📱',
       title: '전화번호',
-      value: '+82 10-1234-5678',
-      link: 'tel:+821012345678'
+      value: '010-2376-4140',
+      link: 'tel:01023764140'
     },
     {
       icon: '📍',
       title: '위치',
-      value: '서울, 대한민국',
+      value: '경기도 안양시',
       link: '#'
     },
     {
       icon: '💼',
       title: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      link: 'https://linkedin.com/in/yourprofile'
+      value: 'LinkedIn 프로필',
+      link: 'https://www.linkedin.com/in/%EC%9C%A4%EC%84%9D-%EC%A7%80-902024300/'
     }
   ];
 
@@ -119,6 +119,8 @@ const Contact = () => {
                   className="contact-item card"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  target={item.link.startsWith('http') ? '_blank' : '_self'}
+                  rel={item.link.startsWith('http') ? 'noopener noreferrer' : ''}
                 >
                   <div className="contact-icon">{item.icon}</div>
                   <div className="contact-details">
@@ -133,31 +135,37 @@ const Contact = () => {
               className="social-links"
               variants={itemVariants}
             >
-              <h4>소셜 미디어</h4>
+              <h4>소셜 미디어 & 블로그</h4>
               <div className="social-icons">
                 <motion.a
-                  href="#"
+                  href="https://github.com/dbstjrgudsla"
                   className="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   GitHub
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/in/%EC%9C%A4%EC%84%9D-%EC%A7%80-902024300/"
                   className="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   LinkedIn
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://velog.io/@dbstjrgudsla/posts"
                   className="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  Twitter
+                  Velog
                 </motion.a>
               </div>
             </motion.div>

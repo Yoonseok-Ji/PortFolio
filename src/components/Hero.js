@@ -25,19 +25,37 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            안녕하세요, <span className="blue-accent">지윤석</span> 입니다
+            안녕하세요, 저는<br />
+            신입 클라우드엔지니어<br />
+            <span className="blue-accent">지윤석</span>입니다.
           </motion.h1>
           
-          <motion.p
-            className="hero-subtitle"
+          <motion.div 
+            className="hero-resume"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            창의적이고 혁신적인 웹 솔루션을 만드는 것을 좋아합니다.
-            <br />
-            사용자 경험을 최우선으로 생각하며 깔끔하고 효율적인 코드를 작성합니다.
-          </motion.p>
+            <div className="resume-section">
+              <h3>학력</h3>
+              <div className="resume-item">
+                <div className="resume-title">홍익대학교 컴퓨터공학과 학사</div>
+                <div className="resume-period">2019.03 ~ 2025.02</div>
+              </div>
+            </div>
+            
+            <div className="resume-section">
+              <h3>외부 활동</h3>
+              <div className="resume-item">
+                <div className="resume-title">UMC 프론트엔드 팀장</div>
+                <div className="resume-period">2023.09 ~ 2024.02</div>
+              </div>
+              <div className="resume-item">
+                <div className="resume-title">현대오토에버 모빌리티 스쿨 클라우드 과정</div>
+                <div className="resume-period">2024.08 ~ 2025.02</div>
+              </div>
+            </div>
+          </motion.div>
 
           <motion.div
             className="hero-buttons"
