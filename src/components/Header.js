@@ -36,7 +36,7 @@ const Header = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="blue-accent">Portfolio</span>
+          <span>지윤석</span>
         </motion.div>
 
         <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
@@ -48,9 +48,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection('home');
                 }}
-                whileHover={{ color: '#3498db' }}
+                whileHover={{ color: '#3b82f6' }}
               >
-                홈
+                Home
               </motion.a>
             </li>
             <li>
@@ -60,9 +60,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection('about');
                 }}
-                whileHover={{ color: '#3498db' }}
+                whileHover={{ color: '#3b82f6' }}
               >
-                소개
+                About
               </motion.a>
             </li>
             <li>
@@ -72,9 +72,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection('skills');
                 }}
-                whileHover={{ color: '#3498db' }}
+                whileHover={{ color: '#3b82f6' }}
               >
-                기술
+                Skills
               </motion.a>
             </li>
             <li>
@@ -84,9 +84,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection('projects');
                 }}
-                whileHover={{ color: '#3498db' }}
+                whileHover={{ color: '#3b82f6' }}
               >
-                프로젝트
+                Projects
               </motion.a>
             </li>
             <li>
@@ -96,9 +96,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                whileHover={{ color: '#3498db' }}
+                whileHover={{ color: '#3b82f6' }}
               >
-                연락처
+                Contact
               </motion.a>
             </li>
           </ul>

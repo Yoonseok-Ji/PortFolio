@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 
 const Projects = () => {
@@ -9,160 +10,102 @@ const Projects = () => {
     threshold: 0.1
   });
 
+  const navigate = useNavigate();
+
   const projects = [
     {
-      id: 1,
+      id: 'dongne',
       title: '동네형',
       description: '트레이너와 회원 간 PT 매칭 웹 서비스',
       technologies: ['React', 'Node.js', 'MySQL', 'AWS'],
-      image: '/api/placeholder/400/250',
-      demoUrl: '#',
-      githubUrl: '#',
-      blogUrl: 'https://velog.io/@dbstjrgudsla/posts'
+      color: '#3b82f6'
     },
     {
-      id: 2,
+      id: 'ttoon',
       title: 'TTOON',
       description: 'AI가 만들어주는 일기를 네컷 만화로 바꿔주는 웹서비스',
       technologies: ['React', 'Python', 'FastAPI', 'OpenAI API'],
-      image: '/api/placeholder/400/250',
-      demoUrl: '#',
-      githubUrl: '#',
-      blogUrl: 'https://velog.io/@dbstjrgudsla/posts'
+      color: '#10b981'
     },
     {
-      id: 3,
+      id: 'autoalarm',
       title: 'AutoAlarm',
       description: '가상화폐 자동 알림 서비스',
       technologies: ['Python', 'Docker', 'Kubernetes', 'Jenkins'],
-      image: '/api/placeholder/400/250',
-      demoUrl: '#',
-      githubUrl: '#',
-      blogUrl: 'https://velog.io/@dbstjrgudsla/posts'
+      color: '#f59e0b'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
-  const handleProjectClick = (project) => {
-    // 프로젝트 상세 페이지로 리다이렉트 (추후 구현)
-    console.log('프로젝트 클릭:', project.title);
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${projectId}`);
   };
 
   return (
-    <section id="projects" className="section projects">
+    <section id="projects" className="projects">
       <motion.div
         ref={ref}
         className="projects-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
       >
-        <motion.h2 className="section-title" variants={itemVariants}>
-          프로젝트
-        </motion.h2>
+        <h2 className="section-title">Projects</h2>
 
-        <motion.div className="projects-intro" variants={itemVariants}>
-          <p>
-            다양한 기술을 활용하여 완성한 프로젝트들입니다. 
-            각 프로젝트를 클릭하면 상세 정보를 확인할 수 있습니다.
-          </p>
-        </motion.div>
-
-        <motion.div className="projects-grid" variants={containerVariants}>
+        <motion.div 
+          className="projects-grid"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="project-card card"
-              variants={itemVariants}
+              className="project-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              onClick={() => handleProjectClick(project)}
+              onClick={() => handleProjectClick(project.id)}
             >
-              <div className="project-image">
-                <div className="image-placeholder">
-                  <span>{project.title}</span>
+              <div className="project-header" style={{ borderTopColor: project.color }}>
+                <div className="project-icon" style={{ backgroundColor: project.color }}>
+                  {project.title.charAt(0)}
                 </div>
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <motion.a
-                      href={project.demoUrl}
-                      className="project-link"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span>데모</span>
-                    </motion.a>
-                    <motion.a
-                      href={project.githubUrl}
-                      className="project-link"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span>코드</span>
-                    </motion.a>
-                    <motion.a
-                      href={project.blogUrl}
-                      className="project-link"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={(e) => e.stopPropagation()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span>블로그</span>
-                    </motion.a>
-                  </div>
-                </div>
+                <h3>{project.title}</h3>
+              </div>
+              
+              <p className="project-description">{project.description}</p>
+              
+              <div className="project-technologies">
+                {project.technologies.map((tech, techIndex) => (
+                  <span key={techIndex} className="tech-tag" style={{ backgroundColor: project.color }}>
+                    {tech}
+                  </span>
+                ))}
               </div>
 
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                
-                <div className="project-technologies">
-                  {project.technologies.map(tech => (
-                    <span key={tech} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="project-footer">
+                <span className="view-details">자세히 보기 →</span>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div className="blog-section" variants={itemVariants}>
-          <h3>더 자세한 내용이 궁금하다면?</h3>
-          <motion.a
+        <motion.div 
+          className="blog-section"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <p>더 자세한 개발 과정이 궁금하다면?</p>
+          <a
             href="https://velog.io/@dbstjrgudsla/posts"
-            className="blog-link btn"
+            className="blog-link"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             블로그 방문하기
-          </motion.a>
+          </a>
         </motion.div>
       </motion.div>
     </section>

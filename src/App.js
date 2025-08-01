@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -6,11 +7,12 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import ProjectDetail from './components/ProjectDetail';
 import './App.css';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
+    <>
       <Header />
       <motion.main
         initial={{ opacity: 0 }}
@@ -23,7 +25,20 @@ function App() {
         <Projects />
         <Contact />
       </motion.main>
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
