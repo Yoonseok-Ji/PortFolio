@@ -31,7 +31,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/PortFolio">
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
