@@ -58,33 +58,23 @@ const Hero = () => {
 
           <div className="education-section">
             <h2>학력 및 활동</h2>
-            <div className="timeline">
-              <div className="timeline-item">
-                <div className="timeline-content">
-                  <h4>홍익대학교 컴퓨터공학과 졸업</h4>
-                  <div className="timeline-period">2019.03 ~ 2025.02</div>
-                </div>
+            <div className="education-content">
+              <div className="education-item">
+                <h4>📚 학력</h4>
+                <p><strong>홍익대학교 컴퓨터공학과 졸업</strong> (2019.03 ~ 2025.02)</p>
+                <p><strong>육군 만기제대 (군사경찰)</strong> (2020.06 ~ 2021.12)</p>
               </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-content">
-                  <h4>육군 만기제대 (군사경찰)</h4>
-                  <div className="timeline-period">2020.06 ~ 2021.12</div>
-                </div>
+
+              <div className="education-item">
+                <h4>📌 UMC (University MakeUs Challenge)</h4>
+                <p><strong>프론트엔드 팀장</strong> (2023.09 ~ 2024.02)</p>
+                <p>프론트엔드 팀장으로 실전 개발과 협업 역량 강화. 매주 제공되는 워크북을 기반으로 핵심 프론트엔드 개념을 학습하고, 팀원들에게 내용을 정리해 공유 및 멘토링 진행. 사이드 프로젝트를 주도적으로 수행하며 React 기반 프론트엔드 개발을 담당. AWS S3 + CloudFront를 이용한 정적 웹 사이트 배포 환경 구성 및 운영. GitHub 협업을 통해 코드 리뷰 및 버전 관리를 실전처럼 경험.</p>
               </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-content">
-                  <h4>UMC(개발연합동아리) 프론트엔드 팀장</h4>
-                  <div className="timeline-period">2023.09 ~ 2024.02</div>
-                </div>
-              </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-content">
-                  <h4>현대 오토에버 모빌리티 SW스쿨 클라우드 과정 1기 수료</h4>
-                  <div className="timeline-period">2024.08 ~ 2025.02</div>
-                </div>
+
+              <div className="education-item">
+                <h4>🚗 현대오토에버 SW 모빌리티 스쿨</h4>
+                <p><strong>클라우드 과정 1기</strong> (2024.08 ~ 2025.02)</p>
+                <p>Docker, K8s 및 퍼블릭 클라우드, DevOps 교육과정을 이수. K8s + AWS EKS를 활용해 하이브리드 클라우드 아키텍처를 직접 기획·구현하고, 프론트엔드 및 인프라 구축을 담당함.</p>
               </div>
             </div>
           </div>
