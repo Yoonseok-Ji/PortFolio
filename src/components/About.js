@@ -31,33 +31,6 @@ const About = () => {
               </p>
             </div>
             
-            <div className="education-experience">
-              <h4>학력 및 경험</h4>
-              <div className="experience-list">
-                <div className="experience-item">
-                  <div className="experience-title">오토에버 모빌리티 SW 스쿨 - 클라우드 과정</div>
-                  <div className="experience-skills">
-                    <span>AWS</span>
-                    <span>Kubernetes</span>
-                    <span>Docker</span>
-                    <span>Jenkins</span>
-                    <span>DevOps</span>
-                    <span>CI/CD</span>
-                  </div>
-                </div>
-                <div className="experience-item">
-                  <div className="experience-title">UMC - 프론트엔드 팀장</div>
-                  <div className="experience-skills">
-                    <span>React</span>
-                    <span>JavaScript</span>
-                    <span>REST API</span>
-                    <span>팀 리더십</span>
-                    <span>프로젝트 관리</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
             <div className="characteristics">
               <div className="char-grid">
                 <div className="char-item">

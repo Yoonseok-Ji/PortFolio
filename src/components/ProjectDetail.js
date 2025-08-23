@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProjectDetail.css';
 
@@ -48,74 +47,83 @@ const ProjectDetail = () => {
     'dongne': {
       title: '동네형',
       subtitle: '트레이너와 회원 간 PT 매칭 웹 서비스',
-      description: '지역 기반 퍼스널 트레이닝 매칭 플랫폼으로, 트레이너와 회원을 연결하는 웹 서비스입니다.',
-      technologies: ['React', 'JavaScript', 'Rest API'],
-      features: [
-        '지역 기반 트레이너 검색',
-        '실시간 채팅 시스템',
-        '예약 및 결제 시스템',
-        '리뷰 및 평점 시스템'
+      projectInfo: {
+        name: '동네형',
+        duration: '3개월',
+        members: '5명 (프론트엔드 3명, 백엔드 2명)',
+        platform: '웹 서비스'
+      },
+      coreFeatures: [
+        '지역 기반 트레이너 검색 및 필터링',
+        '실시간 채팅 시스템으로 트레이너-회원 소통',
+        '예약 및 결제 시스템 통합',
+        '리뷰 및 평점 시스템으로 신뢰도 향상'
       ],
-      architecture: '프론트엔드(React) - JavaScript - REST API - 백엔드 서버',
+      architecture: 'React 프론트엔드 - JavaScript ES6+ - REST API - Node.js 백엔드 - MySQL 데이터베이스',
+      serviceFlow: '회원가입/로그인 → 지역 설정 → 트레이너 검색 → 프로필 확인 → 채팅 상담 → 예약 및 결제 → PT 진행 → 리뷰 작성',
       myRole: [
-        'React 프론트엔드 개발',
-        'JavaScript 인터랙션 구현',
-        'REST API 설계 및 연동'
+        'React 컴포넌트 설계 및 개발 (검색, 필터링, 프로필 페이지)',
+        'JavaScript를 활용한 동적 UI 인터랙션 구현',
+        'REST API 설계 및 프론트엔드-백엔드 연동',
+        '반응형 웹 디자인 구현 (모바일 최적화)',
+        'Git을 통한 팀 협업 및 코드 리뷰 진행'
       ],
-      color: '#10b981'
+      technologies: ['React', 'JavaScript', 'REST API', 'CSS3', 'Git'],
+      color: '#2563eb'
     },
     'ttoon': {
       title: 'TTOON',
       subtitle: 'AI가 만들어주는 일기를 네컷 만화로 바꿔주는 웹서비스',
-      description: '사용자의 일기를 AI가 분석하여 네컷 만화로 변환해주는 창의적인 웹 서비스입니다.',
-      technologies: ['React', 'AWS', 'RestApi', 'Jenkins'],
-      features: [
-        'AI 기반 일기 분석',
-        '네컷 만화 자동 생성',
-        '감정 분석 및 시각화',
-        '만화 스타일 커스터마이징'
+      projectInfo: {
+        name: 'TTOON',
+        duration: '4개월',
+        members: '4명 (프론트엔드 2명, 백엔드 1명, AI 1명)',
+        platform: '웹 서비스'
+      },
+      coreFeatures: [
+        'AI 기반 일기 텍스트 분석 및 감정 인식',
+        '네컷 만화 자동 생성 및 스타일 커스터마이징',
+        '감정 분석 결과 시각화 대시보드',
+        '만화 저장 및 공유 기능'
       ],
-      architecture: '프론트엔드(React) - REST API - AWS 클라우드 - Jenkins CI/CD - AI 이미지 생성',
+      architecture: 'React 프론트엔드 - REST API - AWS Lambda - AI 이미지 생성 모델 - AWS S3 스토리지 - Jenkins CI/CD',
+      serviceFlow: '일기 작성 → AI 텍스트 분석 → 감정 및 키워드 추출 → 네컷 만화 생성 → 스타일 선택 → 결과 확인 → 저장/공유',
       myRole: [
-        'React 프론트엔드 개발',
-        'REST API 설계 및 구현',
-        'AWS 인프라 구축 및 배포',
-        'Jenkins CI/CD 파이프라인 구축'
+        'React 기반 프론트엔드 전체 개발 (UI/UX 설계 포함)',
+        'REST API 설계 및 백엔드와의 데이터 통신 구현',
+        'AWS S3를 활용한 이미지 업로드 및 관리 시스템 구축',
+        'Jenkins를 이용한 CI/CD 파이프라인 구축 및 자동 배포',
+        'AWS 클라우드 인프라 설계 및 운영'
       ],
-      color: '#f59e0b'
+      technologies: ['React', 'AWS', 'REST API', 'Jenkins', 'S3'],
+      color: '#2563eb'
     },
     'autoalarm': {
       title: 'CoinAlarm',
       subtitle: '가상화폐 자동 알림 서비스',
-      description: '가상화폐 가격 변동을 모니터링하고 사용자 설정에 따라 자동으로 알림을 보내는 서비스입니다.',
-      technologies: ['K8s', 'AWS', 'Jenkins', 'React'],
       projectInfo: {
         name: 'CoinAlarm',
         duration: '2개월',
-        members: '2명',
-        myRole: '가상화 세팅 및 K8s 구축, 프론트엔드 개발 및 모니터링 시스템 구축(Prometheus, Grafana)'
+        members: '2명 (인프라 1명, 프론트엔드 1명)',
+        platform: '웹 서비스 + 모바일 알림'
       },
-      features: [
-        'VMware로 가상화 한 후 K8s로 컨테이너 오케스트레이션 구축',
-        '프론트엔드 개발',
-        '모니터링 시스템 구축',
-        '특정시간대 알림, 실시간 시세 등 다양한 기능별 알림',
-        '전화번호 인증으로 SMS 알림'
-      ],
       coreFeatures: [
-        '특정시간대 알림',
-        '실시간 시세 등 다양한 기능별 알림',
-        '전화번호 인증으로 SMS 알림'
+        'VMware 가상화 환경에서 Kubernetes 클러스터 구축',
+        '실시간 가상화폐 시세 모니터링 및 알림',
+        '사용자 맞춤형 알림 설정 (가격, 시간대, 변동률)',
+        'SMS 인증을 통한 모바일 알림 서비스'
       ],
-      architecture: 'React 프론트엔드 - Python 백엔드 - Kubernetes 오케스트레이션 - Jenkins CI/CD - AWS 클라우드 - Prometheus/Grafana 모니터링',
+      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - Jenkins CI/CD - AWS EKS - Prometheus/Grafana 모니터링',
+      serviceFlow: '회원가입 → SMS 인증 → 관심 코인 설정 → 알림 조건 설정 → 실시간 모니터링 → 조건 만족 시 알림 발송',
       myRole: [
-        'VMware 가상화 환경 구축',
-        'Kubernetes 클러스터 구축 및 관리',
-        'React 프론트엔드 개발',
-        'Prometheus, Grafana 모니터링 시스템 구축',
-        'Jenkins CI/CD 파이프라인 구축'
+        'VMware를 이용한 가상화 환경 구축 및 관리',
+        'Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드 구성)',
+        'React 기반 프론트엔드 개발 (대시보드, 설정 페이지)',
+        'Prometheus와 Grafana를 활용한 모니터링 시스템 구축',
+        'Jenkins CI/CD 파이프라인 구축 및 자동 배포 환경 구성'
       ],
-      color: '#3b82f6'
+      technologies: ['K8s', 'AWS', 'Jenkins', 'React', 'Prometheus'],
+      color: '#2563eb'
     }
   };
 
@@ -200,50 +208,18 @@ const ProjectDetail = () => {
 
   return (
     <div className="project-detail">
-      <motion.div 
-        className="project-detail-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="project-detail-container">
         <button onClick={() => navigate('/')} className="back-btn">
           ← 돌아가기
         </button>
 
         <div className="project-hero">
           <div className="project-info">
-            <motion.h1 
-              className="project-title"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              {project.title}
-            </motion.h1>
-            <motion.p 
-              className="project-subtitle"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              {project.subtitle}
-            </motion.p>
-            <motion.p 
-              className="project-description"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              {project.description}
-            </motion.p>
+            <h1 className="project-title">{project.title}</h1>
+            <p className="project-subtitle">{project.subtitle}</p>
           </div>
 
-          <motion.div 
-            className="imac-mockup"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <div className="imac-mockup">
             <div className="imac-screen">
               <div className="screen-content">
                 <div className="browser-bar">
@@ -263,179 +239,80 @@ const ProjectDetail = () => {
             </div>
             <div className="imac-stand"></div>
             <div className="imac-base"></div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="project-content">
           <div className="content-grid">
-            {/* CoinAlarm 프로젝트 정보 섹션 */}
-            {projectId === 'autoalarm' && (
-              <motion.section 
-                className="project-section full-width"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
-              >
-                <h2>프로젝트 정보</h2>
-                <div className="project-info-grid">
-                  <div className="info-item">
-                    <strong>프로젝트명:</strong> {project.projectInfo?.name}
-                  </div>
-                  <div className="info-item">
-                    <strong>개발 기간:</strong> {project.projectInfo?.duration}
-                  </div>
-                  <div className="info-item">
-                    <strong>참여 인원:</strong> {project.projectInfo?.members}
-                  </div>
-                  <div className="info-item full-width">
-                    <strong>나의 역할:</strong> {project.projectInfo?.myRole}
-                  </div>
+            {/* 프로젝트 정보 */}
+            <section className="project-section">
+              <h2>프로젝트 정보</h2>
+              <div className="project-info-grid">
+                <div className="info-item">
+                  <strong>프로젝트명:</strong> {project.projectInfo.name}
                 </div>
-              </motion.section>
-            )}
-
-            {/* 핵심 기능 섹션 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && (
-              <motion.section 
-                className="project-section"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.6 }}
-              >
-                <h2>핵심 기능 소개</h2>
-                <ul className="features-list">
-                  {project.coreFeatures?.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </motion.section>
-            )}
-
-            {/* K8s 섹션 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && (
-              <motion.section 
-                className="project-section"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.7 }}
-              >
-                <h2>Kubernetes</h2>
-                <div className="image-container">
-                  {k8sImage ? (
-                    <img 
-                      src={k8sImage} 
-                      alt="Kubernetes 구조도" 
-                      className="section-image"
-                    />
-                  ) : (
-                    <div className="image-placeholder">
-                      <p>Kubernetes 구조도</p>
-                    </div>
-                  )}
+                <div className="info-item">
+                  <strong>개발 기간:</strong> {project.projectInfo.duration}
                 </div>
-              </motion.section>
-            )}
+                <div className="info-item">
+                  <strong>참여 인원:</strong> {project.projectInfo.members}
+                </div>
+                <div className="info-item">
+                  <strong>플랫폼:</strong> {project.projectInfo.platform}
+                </div>
+              </div>
+            </section>
 
-            <motion.section 
-              className="project-section"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: projectId === 'autoalarm' ? 0.8 : 0.5 }}
-            >
-              <h2>주요 기능</h2>
+            {/* 핵심 기능 */}
+            <section className="project-section">
+              <h2>핵심 기능</h2>
               <ul className="features-list">
-                {project.features.map((feature, index) => (
+                {project.coreFeatures.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
-            </motion.section>
+            </section>
 
-            <motion.section 
-              className="project-section"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: projectId === 'autoalarm' ? 0.9 : 0.6 }}
-            >
-              <h2>사용 기술</h2>
-              <div className="tech-stack">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag" style={{ backgroundColor: project.color }}>
-                    {tech}
-                  </span>
-                ))}
+            {/* 아키텍처 */}
+            <section className="project-section full-width">
+              <h2>아키텍처</h2>
+              <div className="architecture">
+                <p>{project.architecture}</p>
               </div>
-            </motion.section>
+            </section>
 
-            {/* 아키텍처 섹션 */}
-            <motion.section 
-              className="project-section full-width"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: projectId === 'autoalarm' ? 1.0 : 0.7 }}
-            >
-              <h2>시스템 아키텍처</h2>
-              {projectId === 'autoalarm' ? (
-                <div className="image-container">
-                  {architectureImage ? (
-                    <img 
-                      src={architectureImage} 
-                      alt="시스템 아키텍처" 
-                      className="section-image"
-                    />
-                  ) : (
-                    <div className="architecture" style={{ borderColor: project.color }}>
-                      <p>{project.architecture}</p>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="architecture" style={{ borderColor: project.color }}>
-                  <p>{project.architecture}</p>
-                </div>
-              )}
-            </motion.section>
+            {/* 서비스 플로우 */}
+            <section className="project-section full-width">
+              <h2>서비스 플로우</h2>
+              <div className="service-flow">
+                <p>{project.serviceFlow}</p>
+              </div>
+            </section>
 
-            {/* 서비스 플로우 섹션 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && (
-              <motion.section 
-                className="project-section full-width"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 1.1 }}
-              >
-                <h2>서비스 플로우</h2>
-                <div className="image-container">
-                  {serviceFlowImage ? (
-                    <img 
-                      src={serviceFlowImage} 
-                      alt="서비스 플로우" 
-                      className="section-image"
-                    />
-                  ) : (
-                    <div className="image-placeholder">
-                      <p>서비스 플로우 다이어그램</p>
-                    </div>
-                  )}
-                </div>
-              </motion.section>
-            )}
-
-            <motion.section 
-              className="project-section full-width"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: projectId === 'autoalarm' ? 1.2 : 0.8 }}
-            >
-              <h2>담당 역할</h2>
+            {/* 나의 역할 */}
+            <section className="project-section full-width">
+              <h2>나의 역할</h2>
               <ul className="role-list">
                 {project.myRole.map((role, index) => (
                   <li key={index}>{role}</li>
                 ))}
               </ul>
-            </motion.section>
+            </section>
+
+            {/* 사용 기술 */}
+            <section className="project-section">
+              <h2>사용 기술</h2>
+              <div className="tech-stack">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

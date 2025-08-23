@@ -1,148 +1,127 @@
 .project-detail {
   min-height: 100vh;
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background: #f8fafc;
   padding: 2rem 0;
 }
 
 .project-detail-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 2rem;
 }
 
 .back-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: #2563eb;
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  margin-bottom: 3rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
 }
 
 .back-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  background: #1d4ed8;
 }
 
 .project-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 3rem;
   align-items: center;
-  margin-bottom: 6rem;
-  min-height: 70vh;
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
 }
 
 .project-info {
-  color: white;
+  color: #1f2937;
 }
 
 .project-title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
 }
 
 .project-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-.project-description {
   font-size: 1.2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* iMac Mockup Styles - 크기 증가 */
 .imac-mockup {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: perspective(1000px) rotateY(-5deg);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .imac-screen {
-  width: 600px; /* 400px에서 600px로 증가 */
-  height: 375px; /* 250px에서 375px로 증가 */
-  background: #1a1a1a;
-  border-radius: 12px; /* 8px에서 12px로 증가 */
-  padding: 12px; /* 8px에서 12px로 증가 */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #1f2937;
+  border-radius: 12px 12px 0 0;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .screen-content {
   width: 100%;
   height: 100%;
-  background: #ffffff;
-  border-radius: 6px; /* 4px에서 6px로 증가 */
+  background: white;
+  border-radius: 8px 8px 0 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
 .browser-bar {
-  height: 45px; /* 30px에서 45px로 증가 */
-  background: #f0f0f0;
+  height: 30px;
+  background: #f3f4f6;
   display: flex;
   align-items: center;
-  padding: 0 18px; /* 12px에서 18px로 증가 */
-  border-bottom: 1px solid #ddd;
+  padding: 0 12px;
+  gap: 8px;
 }
 
 .browser-buttons {
   display: flex;
-  gap: 9px; /* 6px에서 9px로 증가 */
-  margin-right: 18px; /* 12px에서 18px로 증가 */
+  gap: 6px;
 }
 
-.browser-buttons span {
-  width: 18px; /* 12px에서 18px로 증가 */
-  height: 18px; /* 12px에서 18px로 증가 */
+.btn-close, .btn-minimize, .btn-maximize {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
-.btn-close {
-  background: #ff5f57;
-}
-
-.btn-minimize {
-  background: #ffbd2e;
-}
-
-.btn-maximize {
-  background: #28ca42;
-}
+.btn-close { background: #ef4444; }
+.btn-minimize { background: #f59e0b; }
+.btn-maximize { background: #10b981; }
 
 .address-bar {
   flex: 1;
-  background: white;
-  border-radius: 6px; /* 4px에서 6px로 증가 */
-  padding: 6px 18px; /* 4px 12px에서 6px 18px로 증가 */
-  font-size: 14px; /* 11px에서 14px로 증가 */
-  color: #666;
-  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.address-bar span {
+  font-size: 0.8rem;
+  color: #6b7280;
 }
 
 .website-preview {
-  flex: 1;
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  height: calc(100% - 30px);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  background: #f8fafc;
 }
 
 .project-screenshot,
@@ -150,117 +129,59 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-screenshot.loaded,
-.project-video.loaded {
-  opacity: 1;
-}
-
-.project-video {
-  object-fit: contain;
 }
 
 .media-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-  z-index: 1;
-}
-
-.project-screenshot.loaded + .media-placeholder,
-.project-video.loaded + .media-placeholder {
-  display: none;
+  background: #f3f4f6;
 }
 
 .placeholder-content {
   text-align: center;
   color: #6b7280;
-  padding: 2rem;
 }
 
 .placeholder-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: #374151;
-  font-weight: 600;
-}
-
-.placeholder-content p {
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
-  color: #6b7280;
-}
-
-.placeholder-content small {
-  font-size: 1rem;
-  color: #9ca3af;
-  font-style: italic;
-}
-
-.preview-placeholder {
-  text-align: center;
-  color: #6b7280;
-}
-
-.preview-placeholder h3 {
-  font-size: 1.8rem; /* 1.2rem에서 1.8rem로 증가 */
-  margin-bottom: 0.8rem; /* 0.5rem에서 0.8rem로 증가 */
-  color: #374151;
-}
-
-.preview-placeholder p {
-  font-size: 1.2rem; /* 0.9rem에서 1.2rem로 증가 */
-  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .imac-stand {
-  width: 90px; /* 60px에서 90px로 증가 */
-  height: 60px; /* 40px에서 60px로 증가 */
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
-  margin-top: -3px; /* -2px에서 -3px로 증가 */
-  border-radius: 0 0 12px 12px; /* 8px에서 12px로 증가 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 4px 8px에서 6px 12px로 증가 */
+  width: 60px;
+  height: 40px;
+  background: #d1d5db;
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
 }
 
 .imac-base {
-  width: 180px; /* 120px에서 180px로 증가 */
-  height: 12px; /* 8px에서 12px로 증가 */
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
-  border-radius: 50px;
-  margin-top: -6px; /* -4px에서 -6px로 증가 */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* 2px 4px에서 3px 6px로 증가 */
+  width: 120px;
+  height: 8px;
+  background: #d1d5db;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 
 .project-content {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 25px;
-  padding: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  margin-top: 3rem;
 }
 
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .project-section {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
 }
 
 .project-section.full-width {
@@ -268,165 +189,107 @@
 }
 
 .project-section h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #1f2937;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid rgba(31, 41, 55, 0.3);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2563eb;
 }
 
-.project-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #374151;
+.project-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-item {
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.info-item strong {
+  color: #1f2937;
+  display: block;
+  margin-bottom: 0.3rem;
 }
 
 .features-list,
 .role-list {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin: 0;
 }
 
 .features-list li,
 .role-list li {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-left: 4px solid #3b82f6;
-  font-size: 1.1rem;
-  color: #1f2937;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
-.features-list li:hover,
-.role-list li:hover {
-  transform: translateX(8px);
-  background: rgba(255, 255, 255, 1);
+.features-list li:last-child,
+.role-list li:last-child {
+  border-bottom: none;
+}
+
+.features-list li::before,
+.role-list li::before {
+  content: "•";
+  color: #2563eb;
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+.architecture,
+.service-flow {
+  background: #f8fafc;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.architecture p,
+.service-flow p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .tech-tag {
-  background: rgba(255, 255, 255, 0.9);
-  color: #1f2937;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.tech-tag:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 1);
-}
-
-.architecture {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2.5rem;
-  border-radius: 15px;
-  border: 3px dashed rgba(59, 130, 246, 0.5);
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-.architecture p {
-  font-size: 1.3rem;
-  color: #1f2937;
-  font-weight: 600;
-  margin: 0;
-}
-
-/* 프로젝트 정보 그리드 */
-.project-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.info-item {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-left: 4px solid #3b82f6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.info-item.full-width {
-  grid-column: 1 / -1;
-}
-
-.info-item strong {
-  color: #1f2937;
-  font-weight: 700;
-  margin-right: 0.5rem;
-}
-
-/* 이미지 컨테이너 */
-.image-container {
-  position: relative;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.section-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e2e8f0;
-}
-
-.image-container .image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  border: 2px dashed #3b82f6;
-  color: #6b7280;
-  font-size: 1.1rem;
+  background: #2563eb;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
 @media (max-width: 1024px) {
-  .project-detail-container {
-    padding: 0 2rem;
-  }
-
   .project-hero {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
     text-align: center;
-  }
-
-  .project-title {
-    font-size: 3rem;
-  }
-
-  .imac-screen {
-    width: 500px;
-    height: 315px;
   }
 
   .content-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .project-info-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -435,56 +298,33 @@
     padding: 0 1rem;
   }
 
-  .project-title {
-    font-size: 2.5rem;
-  }
-
-  .project-subtitle {
-    font-size: 1.3rem;
-  }
-
-  .project-description {
-    font-size: 1.1rem;
-  }
-
-  .imac-screen {
-    width: 400px;
-    height: 250px;
-  }
-
-  .project-content {
-    padding: 2.5rem;
-  }
-
-  .project-section {
+  .project-hero {
     padding: 2rem;
   }
 
-  .project-info-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .info-item.full-width {
-    grid-column: 1;
-  }
-}
-
-@media (max-width: 480px) {
   .project-title {
     font-size: 2rem;
   }
 
-  .imac-screen {
-    width: 350px;
-    height: 220px;
+  .project-section {
+    padding: 1.5rem;
   }
 
-  .project-content {
-    padding: 2rem;
+  .imac-screen {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-hero {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
   }
 
   .project-section {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
 }

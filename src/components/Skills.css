@@ -45,13 +45,6 @@
   background: #f8fafc;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
-}
-
-.skill-item:hover {
-  background: #2563eb;
-  color: white;
-  transform: translateY(-2px);
 }
 
 .skill-icon {
@@ -64,10 +57,6 @@
   font-weight: 500;
   color: #374151;
   text-align: center;
-}
-
-.skill-item:hover .skill-name {
-  color: white;
 }
 
 @media (max-width: 768px) {

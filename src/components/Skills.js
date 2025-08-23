@@ -15,16 +15,11 @@ const Skills = () => {
       { name: 'JavaScript', icon: '🟨' },
       { name: 'HTML/CSS', icon: '🌐' }
     ],
-    backend: [
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'MySQL', icon: '🗄️' },
-      { name: 'REST API', icon: '🔗' }
-    ],
     devops: [
       { name: 'AWS', icon: '☁️' },
       { name: 'Docker', icon: '🐳' },
-      { name: 'Kubernetes', icon: '☸️' },
-      { name: 'Jenkins', icon: '🔧' }
+      { name: 'K8s', icon: '☸️' },
+      { name: 'GitHub', icon: '💻' }
     ]
   };
 
@@ -41,7 +36,7 @@ const Skills = () => {
 
         <div className="skills-content">
           <div className="skills-category">
-            <h3>Frontend</h3>
+            <h3>FRONTEND</h3>
             <div className="skills-grid">
               {skillsData.frontend.map((skill) => (
                 <div key={skill.name} className="skill-item">
@@ -53,19 +48,7 @@ const Skills = () => {
           </div>
 
           <div className="skills-category">
-            <h3>Backend</h3>
-            <div className="skills-grid">
-              {skillsData.backend.map((skill) => (
-                <div key={skill.name} className="skill-item">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <div className="skill-name">{skill.name}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>DevOps & Cloud</h3>
+            <h3>DEVOPS</h3>
             <div className="skills-grid">
               {skillsData.devops.map((skill) => (
                 <div key={skill.name} className="skill-item">
