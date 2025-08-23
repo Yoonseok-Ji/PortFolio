@@ -59,16 +59,50 @@ const Hero = () => {
           <div className="education-section">
             <h2>학력 및 이력</h2>
             <div className="education-content">
-              <div className="education-text">
-                <p><strong>홍익대학교 컴퓨터공학과 졸업</strong> (2019.03 ~ 2025.02)</p>
-                <p><strong>육군 만기제대 (군사경찰)</strong> (2020.06 ~ 2021.12)</p>
-                <p><strong>UMC(전국 대학연합 개발 동아리)</strong> - 프론트엔드 팀장으로 실전 개발과 협업 역량 강화</p>
-                <p>매주 제공되는 워크북을 기반으로 핵심 프론트엔드 개념을 학습하고, 팀원들에게 내용을 정리해 공유 및 멘토링 진행</p>
-                <p>사이드 프로젝트를 주도적으로 수행하며 React 기반 프론트엔드 개발을 담당</p>
-                <p>AWS S3 + CloudFront를 이용한 정적 웹 사이트 배포 환경 구성 및 운영</p>
-                <p>GitHub 협업을 통해 코드 리뷰 및 버전 관리를 실전처럼 경험</p>
-                <p><strong>현대오토에버 모빌리티 SW 스쿨 클라우드 과정</strong> - Docker, K8s 및 퍼블릭 클라우드, DevOps 교육과정을 이수</p>
-                <p>K8s + AWS EKS를 활용해 하이브리드 클라우드 아키텍처를 직접 기획·구현하고, 프론트엔드 및 인프라 구축을 담당함</p>
+              <div className="education-grid">
+                <div className="education-card">
+                  <div className="card-header">
+                    <h4>🎓 학력</h4>
+                  </div>
+                  <div className="card-content">
+                    <div className="education-item">
+                      <strong>홍익대학교 컴퓨터공학과 졸업</strong>
+                      <span className="period">(2019.03 ~ 2025.02)</span>
+                    </div>
+                    <div className="education-item">
+                      <strong>육군 만기제대 (군사경찰)</strong>
+                      <span className="period">(2020.06 ~ 2021.12)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="education-card">
+                  <div className="card-header">
+                    <h4>💼 경력 및 활동</h4>
+                  </div>
+                  <div className="card-content">
+                    <div className="experience-item">
+                      <div className="exp-title">UMC(전국 대학연합 개발 동아리)</div>
+                      <div className="exp-role">프론트엔드 팀장</div>
+                      <ul className="exp-details">
+                        <li>매주 워크북 기반 프론트엔드 개념 학습 및 팀원 멘토링</li>
+                        <li>React 기반 사이드 프로젝트 주도적 수행</li>
+                        <li>AWS S3 + CloudFront 배포 환경 구성 및 운영</li>
+                        <li>GitHub 협업을 통한 코드 리뷰 및 버전 관리</li>
+                      </ul>
+                    </div>
+
+                    <div className="experience-item">
+                      <div className="exp-title">현대오토에버 모빌리티 SW 스쿨 클라우드 과정</div>
+                      <div className="exp-role">클라우드 엔지니어 과정 수료</div>
+                      <ul className="exp-details">
+                        <li>Docker, K8s 및 퍼블릭 클라우드, DevOps 교육과정 이수</li>
+                        <li>K8s + AWS EKS 하이브리드 클라우드 아키텍처 기획·구현</li>
+                        <li>프론트엔드 및 인프라 구축 담당</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

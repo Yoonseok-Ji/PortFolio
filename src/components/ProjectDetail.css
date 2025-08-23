@@ -276,6 +276,40 @@
   font-weight: 500;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-placeholder {
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.image-placeholder p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.image-placeholder small {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
 @media (max-width: 1024px) {
   .project-hero {
     grid-template-columns: 1fr;

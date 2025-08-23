@@ -6,6 +6,24 @@ import './ProjectDetail.css';
 import coinAlarmImage from '../pictures/coinalarm.png';
 import ttoonVideo from '../video/ttoon_video.mov';
 
+// CoinAlarm 프로젝트 이미지들
+let k8sImage, architectureImage, serviceFlowImage;
+try {
+  k8sImage = require('../pictures/k8s.png');
+} catch (e) {
+  k8sImage = null;
+}
+try {
+  architectureImage = require('../pictures/architecture.png');
+} catch (e) {
+  architectureImage = null;
+}
+try {
+  serviceFlowImage = require('../pictures/service_flow.png');
+} catch (e) {
+  serviceFlowImage = null;
+}
+
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
@@ -82,7 +100,7 @@ const ProjectDetail = () => {
     },
     'autoalarm': {
       title: 'CoinAlarm',
-      subtitle: '가상화폐 자동 알림 서비스',
+      subtitle: '하이브리드 클라우드를 이용한 가상화폐 자동 알림 서비스 (메시지 이중화)',
       projectInfo: {
         name: 'CoinAlarm',
         duration: '2개월',
@@ -91,15 +109,17 @@ const ProjectDetail = () => {
       },
       coreFeatures: [
         'VMware 가상화 환경에서 Kubernetes 클러스터 구축',
+        '하이브리드 클라우드 아키텍처로 메시지 이중화 구현',
         '실시간 가상화폐 시세 모니터링 및 알림',
         '사용자 맞춤형 알림 설정 (가격, 시간대, 변동률)',
         'SMS 인증을 통한 모바일 알림 서비스'
       ],
-      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - Jenkins CI/CD - AWS EKS - Prometheus/Grafana 모니터링',
-      serviceFlow: '회원가입 → SMS 인증 → 관심 코인 설정 → 알림 조건 설정 → 실시간 모니터링 → 조건 만족 시 알림 발송',
+      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - Jenkins CI/CD - AWS EKS 하이브리드 클라우드 - Prometheus/Grafana 모니터링',
+      serviceFlow: '회원가입 → SMS 인증 → 관심 코인 설정 → 알림 조건 설정 → 실시간 모니터링 → 조건 만족 시 이중화된 메시지 시스템으로 알림 발송',
       myRole: [
         'VMware를 이용한 가상화 환경 구축 및 관리',
         'Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드 구성)',
+        '하이브리드 클라우드 환경에서 메시지 이중화 시스템 구현',
         'React 기반 프론트엔드 개발 (대시보드, 설정 페이지)',
         'Prometheus와 Grafana를 활용한 모니터링 시스템 구축',
         'Jenkins CI/CD 파이프라인 구축 및 자동 배포 환경 구성'
@@ -255,21 +275,74 @@ const ProjectDetail = () => {
               </ul>
             </section>
 
+            {/* CoinAlarm 전용 K8s 섹션 */}
+            {projectId === 'autoalarm' && (
+              <section className="project-section">
+                <h2>Kubernetes 구조</h2>
+                <div className="image-container">
+                  {k8sImage ? (
+                    <img 
+                      src={k8sImage} 
+                      alt="Kubernetes 구조도" 
+                      className="section-image"
+                    />
+                  ) : (
+                    <div className="image-placeholder">
+                      <p>Kubernetes 클러스터 구조도</p>
+                      <small>마스터/워커 노드 구성 및 Pod 배치</small>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
             {/* 아키텍처 */}
             <section className="project-section full-width">
               <h2>아키텍처</h2>
-              <div className="architecture">
-                <p>{project.architecture}</p>
-              </div>
+              {projectId === 'autoalarm' && architectureImage ? (
+                <div className="image-container">
+                  <img 
+                    src={architectureImage} 
+                    alt="시스템 아키텍처" 
+                    className="section-image"
+                  />
+                </div>
+              ) : (
+                <div className="architecture">
+                  <p>{project.architecture}</p>
+                </div>
+              )}
             </section>
 
-            {/* 서비스 플로우 */}
-            <section className="project-section full-width">
-              <h2>서비스 플로우</h2>
-              <div className="service-flow">
-                <p>{project.serviceFlow}</p>
-              </div>
-            </section>
+            {/* CoinAlarm 전용 서비스 플로우 섹션 */}
+            {projectId === 'autoalarm' && (
+              <section className="project-section full-width">
+                <h2>서비스 플로우</h2>
+                <div className="image-container">
+                  {serviceFlowImage ? (
+                    <img 
+                      src={serviceFlowImage} 
+                      alt="서비스 플로우" 
+                      className="section-image"
+                    />
+                  ) : (
+                    <div className="service-flow">
+                      <p>{project.serviceFlow}</p>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {/* 다른 프로젝트의 서비스 플로우 */}
+            {projectId !== 'autoalarm' && (
+              <section className="project-section full-width">
+                <h2>서비스 플로우</h2>
+                <div className="service-flow">
+                  <p>{project.serviceFlow}</p>
+                </div>
+              </section>
+            )}
 
             {/* 나의 역할 */}
             <section className="project-section full-width">
