@@ -6,24 +6,6 @@ import './ProjectDetail.css';
 import coinAlarmImage from '../pictures/coinalarm.png';
 import ttoonVideo from '../video/ttoon_video.mov';
 
-// 추가 이미지들 (파일이 없을 경우를 대비해 try-catch 또는 조건부 처리)
-let k8sImage, architectureImage, serviceFlowImage;
-try {
-  k8sImage = require('../pictures/k8s.png');
-} catch (e) {
-  k8sImage = null;
-}
-try {
-  architectureImage = require('../pictures/architecture.png');
-} catch (e) {
-  architectureImage = null;
-}
-try {
-  serviceFlowImage = require('../pictures/service_flow.png');
-} catch (e) {
-  serviceFlowImage = null;
-}
-
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
