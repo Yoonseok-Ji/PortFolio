@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import './Header.css';
 
 const Header = () => {
@@ -24,82 +23,68 @@ const Header = () => {
   };
 
   return (
-    <motion.header
-      className={`header ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <motion.div
-          className="logo"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <div className="logo">
           <span>Portfolio</span>
-        </motion.div>
+        </div>
 
         <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
           <ul>
             <li>
-              <motion.a
+              <a
                 href="#home"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('home');
                 }}
-                whileHover={{ color: '#3b82f6' }}
               >
                 Home
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="#about"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('about');
                 }}
-                whileHover={{ color: '#3b82f6' }}
               >
                 About
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="#skills"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('skills');
                 }}
-                whileHover={{ color: '#3b82f6' }}
               >
                 Skills
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('projects');
                 }}
-                whileHover={{ color: '#3b82f6' }}
               >
                 Projects
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                whileHover={{ color: '#3b82f6' }}
               >
                 Contact
-              </motion.a>
+              </a>
             </li>
           </ul>
         </nav>
@@ -113,7 +98,7 @@ const Header = () => {
           <span></span>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 };
 

@@ -14,19 +14,14 @@ const About = () => {
       <motion.div
         ref={ref}
         className="about-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="section-title">About Me</h2>
         
         <div className="about-content">
-          <motion.div 
-            className="about-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <div className="about-text">
             <h3>안녕하세요, 지윤석입니다.</h3>
             <div className="about-description">
               <p>
@@ -36,32 +31,59 @@ const About = () => {
               </p>
             </div>
             
+            <div className="education-experience">
+              <h4>학력 및 경험</h4>
+              <div className="experience-list">
+                <div className="experience-item">
+                  <div className="experience-title">오토에버 모빌리티 SW 스쿨 - 클라우드 과정</div>
+                  <div className="experience-skills">
+                    <span>AWS</span>
+                    <span>Kubernetes</span>
+                    <span>Docker</span>
+                    <span>Jenkins</span>
+                    <span>DevOps</span>
+                    <span>CI/CD</span>
+                  </div>
+                </div>
+                <div className="experience-item">
+                  <div className="experience-title">UMC - 프론트엔드 팀장</div>
+                  <div className="experience-skills">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>REST API</span>
+                    <span>팀 리더십</span>
+                    <span>프로젝트 관리</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div className="characteristics">
               <div className="char-grid">
                 <div className="char-item">
                   <div className="char-icon">💻</div>
                   <div className="char-text">
                     <h4>지속적인 학습</h4>
-                    <p>새로운 기술과 트렌드를 빠르게 습득하고 프로젝트에 적용하는 능력을 갖추고 있습니다.</p>
+                    <p>새로운 기술과 트렌드를 빠르게 습득하고 프로젝트에 적용합니다.</p>
                   </div>
                 </div>
                 <div className="char-item">
                   <div className="char-icon">🚀</div>
                   <div className="char-text">
                     <h4>문제 해결 능력</h4>
-                    <p>복잡한 기술적 문제를 체계적으로 분석하고 효율적인 솔루션을 찾아내는 것을 즐깁니다.</p>
+                    <p>복잡한 기술적 문제를 체계적으로 분석하고 효율적인 솔루션을 찾습니다.</p>
                   </div>
                 </div>
                 <div className="char-item">
                   <div className="char-icon">🤝</div>
                   <div className="char-text">
                     <h4>팀워크와 소통</h4>
-                    <p>팀원들과의 원활한 소통을 통해 프로젝트 목표를 달성하고 긍정적인 분위기를 만들어갑니다.</p>
+                    <p>팀원들과의 원활한 소통을 통해 프로젝트 목표를 달성합니다.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>

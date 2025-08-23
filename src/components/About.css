@@ -1,33 +1,12 @@
 .about {
-  padding: 8rem 0;
+  padding: 4rem 0;
   background: #ffffff;
 }
 
 .about-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 4rem;
-  text-align: center;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: #3b82f6;
-  border-radius: 2px;
+  padding: 0 2rem;
 }
 
 .about-content {
@@ -35,46 +14,85 @@
 }
 
 .about-text {
-  background: #f8fafc;
-  border-radius: 25px;
-  padding: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
 }
 
 .about-text h3 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 600;
   color: #1f2937;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .about-description {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .about-description p {
-  font-size: 1.3rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: #4b5563;
   text-align: center;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.characteristics h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #3b82f6;
-  margin-bottom: 2rem;
+.education-experience {
+  margin-bottom: 2.5rem;
+}
+
+.education-experience h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
   text-align: center;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-item {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #2563eb;
+}
+
+.experience-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-skills span {
+  background: #2563eb;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .char-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .char-item {
@@ -82,54 +100,49 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
 }
 
 .char-icon {
-  font-size: 3rem;
-  width: 80px;
-  height: 80px;
-  background: #3b82f6;
-  border-radius: 20px;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  background: #2563eb;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .char-text h4 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #1f2937;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.8rem 0;
 }
 
 .char-text p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #6b7280;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
-  .about-container {
-    padding: 0 2rem;
-  }
-
   .char-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .char-item {
     flex-direction: row;
     text-align: left;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .char-icon {
@@ -140,27 +153,31 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
 
   .about-container {
     padding: 0 1rem;
   }
 
-  .section-title {
-    font-size: 2.5rem;
-  }
-
   .about-text {
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .about-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .about-description p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .experience-list {
+    gap: 1rem;
+  }
+
+  .experience-item {
+    padding: 1rem;
   }
 
   .char-item {
@@ -170,22 +187,27 @@
   }
 
   .char-icon {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .about-text {
-    padding: 2rem;
-  }
-
-  .char-item {
     padding: 1.5rem;
   }
 
+  .char-item {
+    padding: 1rem;
+  }
+
   .char-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .experience-skills span {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.6rem;
   }
 }

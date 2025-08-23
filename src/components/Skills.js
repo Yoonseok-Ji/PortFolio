@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './Skills.css';
@@ -9,83 +9,76 @@ const Skills = () => {
     threshold: 0.1
   });
 
-  const skillsData = useMemo(() => ({
-    topSkills: [
-      { name: 'React', icon: '⚛️', category: 'Frontend' },
-      { name: 'JavaScript', icon: '🟨', category: 'Frontend' }
+  const skillsData = {
+    frontend: [
+      { name: 'React', icon: '⚛️' },
+      { name: 'JavaScript', icon: '🟨' },
+      { name: 'HTML/CSS', icon: '🌐' }
     ],
-    bottomSkills: [
-      { name: 'Docker', icon: '🐳', category: 'DevOps' },
-      { name: 'Kubernetes', icon: '☸️', category: 'DevOps' },
-      { name: 'Jenkins', icon: '🔧', category: 'DevOps' },
-      { name: 'AWS', icon: '☁️', category: 'Cloud' },
-      { name: 'MySQL', icon: '🗄️', category: 'Database' }
+    backend: [
+      { name: 'Node.js', icon: '🟢' },
+      { name: 'MySQL', icon: '🗄️' },
+      { name: 'REST API', icon: '🔗' }
+    ],
+    devops: [
+      { name: 'AWS', icon: '☁️' },
+      { name: 'Docker', icon: '🐳' },
+      { name: 'Kubernetes', icon: '☸️' },
+      { name: 'Jenkins', icon: '🔧' }
     ]
-  }), []);
-
-  const containerVariants = useMemo(() => ({
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }), []);
-
-  const itemVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 }
-    }
-  }), []);
-
-  const SkillItem = React.memo(({ skill, variants }) => (
-    <motion.div
-      className="skill-item"
-      variants={variants}
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
-      <div className="skill-icon">{skill.icon}</div>
-      <div className="skill-info">
-        <div className="skill-name">{skill.name}</div>
-        <div className="skill-category">{skill.category}</div>
-      </div>
-    </motion.div>
-  ));
+  };
 
   return (
     <section id="skills" className="skills">
       <motion.div
         ref={ref}
         className="skills-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.h2 className="section-title" variants={itemVariants}>
-          Skills
-        </motion.h2>
+        <h2 className="section-title">Skills</h2>
 
         <div className="skills-content">
-          <motion.div className="skills-row top-row" variants={itemVariants}>
-            {skillsData.topSkills.map((skill) => (
-              <SkillItem key={skill.name} skill={skill} variants={itemVariants} />
-            ))}
-          </motion.div>
+          <div className="skills-category">
+            <h3>Frontend</h3>
+            <div className="skills-grid">
+              {skillsData.frontend.map((skill) => (
+                <div key={skill.name} className="skill-item">
+                  <div className="skill-icon">{skill.icon}</div>
+                  <div className="skill-name">{skill.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <motion.div className="skills-row bottom-row" variants={itemVariants}>
-            {skillsData.bottomSkills.map((skill) => (
-              <SkillItem key={skill.name} skill={skill} variants={itemVariants} />
-            ))}
-          </motion.div>
+          <div className="skills-category">
+            <h3>Backend</h3>
+            <div className="skills-grid">
+              {skillsData.backend.map((skill) => (
+                <div key={skill.name} className="skill-item">
+                  <div className="skill-icon">{skill.icon}</div>
+                  <div className="skill-name">{skill.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="skills-category">
+            <h3>DevOps & Cloud</h3>
+            <div className="skills-grid">
+              {skillsData.devops.map((skill) => (
+                <div key={skill.name} className="skill-item">
+                  <div className="skill-icon">{skill.icon}</div>
+                  <div className="skill-name">{skill.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
   );
 };
 
-export default React.memo(Skills);
+export default Skills;

@@ -19,7 +19,7 @@ const Projects = () => {
       subtitle: '오토에버 스쿨',
       description: '가상화폐 자동 알림 서비스',
       technologies: ['K8s', 'AWS', 'Jenkins', 'React'],
-      color: '#3b82f6'
+      color: '#2563eb'
     },
     {
       id: 'dongne',
@@ -27,7 +27,7 @@ const Projects = () => {
       subtitle: 'UMC',
       description: '트레이너와 회원 간 PT 매칭 웹 서비스',
       technologies: ['React', 'JavaScript', 'Rest API'],
-      color: '#10b981'
+      color: '#2563eb'
     },
     {
       id: 'ttoon',
@@ -35,7 +35,7 @@ const Projects = () => {
       subtitle: '졸업프로젝트',
       description: 'AI가 만들어주는 일기를 네컷 만화로 바꿔주는 웹서비스',
       technologies: ['React', 'AWS', 'RestApi', 'Jenkins'],
-      color: '#f59e0b'
+      color: '#2563eb'
     }
   ];
 
@@ -48,28 +48,20 @@ const Projects = () => {
       <motion.div
         ref={ref}
         className="projects-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="section-title">Projects</h2>
 
-        <motion.div 
-          className="projects-grid"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {projects.map((project, index) => (
-            <motion.div
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div
               key={project.id}
               className="project-card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => handleProjectClick(project.id)}
             >
-              <div className="project-header" style={{ borderTopColor: project.color }}>
+              <div className="project-header">
                 <div className="project-icon" style={{ backgroundColor: project.color }}>
                   {project.title.charAt(0)}
                 </div>
@@ -83,7 +75,7 @@ const Projects = () => {
               
               <div className="project-technologies">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="tech-tag" style={{ backgroundColor: project.color }}>
+                  <span key={techIndex} className="tech-tag">
                     {tech}
                   </span>
                 ))}
@@ -92,9 +84,9 @@ const Projects = () => {
               <div className="project-footer">
                 <span className="view-details">자세히 보기 →</span>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

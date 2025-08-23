@@ -53,64 +53,45 @@ const Contact = () => {
       <motion.div
         ref={ref}
         className="contact-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="section-title">Contact</h2>
 
         <div className="contact-content">
-          <motion.div 
-            className="contact-info"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+          <div className="contact-info">
             <h3>연락처 정보</h3>
             <div className="contact-items">
               {contactInfo.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="contact-item"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                >
+                <div key={index} className="contact-item">
                   <div className="contact-icon">{item.icon}</div>
                   <div className="contact-details">
                     <h4>{item.title}</h4>
                     <p>{item.value}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="social-links"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <div className="social-links">
             <h3>소셜 링크</h3>
             <div className="social-items">
               {socialLinks.map((social, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={social.url}
                   className="social-item"
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
                 >
                   <div className="social-icon">{social.icon}</div>
                   <span>{social.name}</span>
-                </motion.a>
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>
