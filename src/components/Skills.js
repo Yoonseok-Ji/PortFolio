@@ -10,8 +10,19 @@ const Skills = () => {
   });
 
   const skillsData = {
-    frontend: ['React', 'JavaScript'],
-    devops: ['AWS', 'Docker', 'K8s', 'Jenkins', 'Jira', 'Prometheus', 'Grafana']
+    intermediate: [
+      { name: 'React', category: 'Frontend' },
+      { name: 'JavaScript', category: 'Frontend' },
+      { name: 'AWS', category: 'DevOps' },
+      { name: 'Docker', category: 'DevOps' }
+    ],
+    beginner: [
+      { name: 'K8s', category: 'DevOps' },
+      { name: 'Jenkins', category: 'DevOps' },
+      { name: 'Jira', category: 'DevOps' },
+      { name: 'Prometheus', category: 'DevOps' },
+      { name: 'Grafana', category: 'DevOps' }
+    ]
   };
 
   return (
@@ -26,26 +37,32 @@ const Skills = () => {
         <h2 className="section-title">Skills</h2>
 
         <div className="skills-content">
-          <div className="skills-category">
-            <h3>FRONTEND</h3>
-            <div className="skills-list">
-              {skillsData.frontend.map((skill, index) => (
-                <span key={skill} className="skill-item">
-                  {skill}
-                  {index < skillsData.frontend.length - 1 && <span className="separator">•</span>}
-                </span>
+          <div className="skills-level">
+            <div className="level-header">
+              <h3>중급</h3>
+              <span className="level-indicator intermediate"></span>
+            </div>
+            <div className="skills-grid">
+              {skillsData.intermediate.map((skill) => (
+                <div key={skill.name} className="skill-item">
+                  <span className="skill-name">{skill.name}</span>
+                  <span className="skill-category">{skill.category}</span>
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="skills-category">
-            <h3>DEVOPS</h3>
-            <div className="skills-list">
-              {skillsData.devops.map((skill, index) => (
-                <span key={skill} className="skill-item">
-                  {skill}
-                  {index < skillsData.devops.length - 1 && <span className="separator">•</span>}
-                </span>
+          <div className="skills-level">
+            <div className="level-header">
+              <h3>초급</h3>
+              <span className="level-indicator beginner"></span>
+            </div>
+            <div className="skills-grid">
+              {skillsData.beginner.map((skill) => (
+                <div key={skill.name} className="skill-item">
+                  <span className="skill-name">{skill.name}</span>
+                  <span className="skill-category">{skill.category}</span>
+                </div>
               ))}
             </div>
           </div>

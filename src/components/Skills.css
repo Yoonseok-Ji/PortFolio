@@ -15,7 +15,7 @@
   gap: 2rem;
 }
 
-.skills-category {
+.skills-level {
   background: white;
   border-radius: 12px;
   padding: 2rem;
@@ -23,34 +23,68 @@
   border: 1px solid #e5e7eb;
 }
 
-.skills-category h3 {
+.level-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.level-header h3 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #1f2937;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin: 0;
 }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+.level-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.level-indicator.intermediate {
+  background: #2563eb;
+}
+
+.level-indicator.beginner {
+  background: #10b981;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .skill-item {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #374151;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
 }
 
-.separator {
-  color: #9ca3af;
+.skill-item:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.3rem;
+}
+
+.skill-category {
   font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -62,26 +96,38 @@
     padding: 0 1rem;
   }
 
-  .skills-category {
+  .skills-level {
     padding: 1.5rem;
   }
 
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+  }
+
   .skill-item {
+    padding: 0.8rem;
+  }
+
+  .skill-name {
     font-size: 0.9rem;
+  }
+
+  .skill-category {
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-list {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .separator {
-    display: none;
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skill-item {
+    padding: 0.7rem;
+  }
+
+  .skill-name {
     font-size: 0.85rem;
   }
 }
