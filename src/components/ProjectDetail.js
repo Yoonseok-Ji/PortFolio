@@ -59,16 +59,15 @@ const ProjectDetail = () => {
         '예약 및 결제 시스템 통합',
         '리뷰 및 평점 시스템으로 신뢰도 향상'
       ],
-      architecture: 'React 프론트엔드 - JavaScript ES6+ - REST API - Node.js 백엔드 - MySQL 데이터베이스',
+      architecture: 'React 프론트엔드 - REST API - Node.js 백엔드 - MySQL 데이터베이스',
       serviceFlow: '회원가입/로그인 → 지역 설정 → 트레이너 검색 → 프로필 확인 → 채팅 상담 → 예약 및 결제 → PT 진행 → 리뷰 작성',
       myRole: [
         'React 컴포넌트 설계 및 개발 (검색, 필터링, 프로필 페이지)',
-        'JavaScript를 활용한 동적 UI 인터랙션 구현',
         'REST API 설계 및 프론트엔드-백엔드 연동',
         '반응형 웹 디자인 구현 (모바일 최적화)',
         'Git을 통한 팀 협업 및 코드 리뷰 진행'
       ],
-      technologies: ['React', 'JavaScript', 'REST API', 'CSS3', 'Git'],
+      technologies: ['REST API', 'React'],
       color: '#2563eb'
     },
     'ttoon': {
@@ -86,16 +85,15 @@ const ProjectDetail = () => {
         '감정 분석 결과 시각화 대시보드',
         '만화 저장 및 공유 기능'
       ],
-      architecture: 'React 프론트엔드 - REST API - AWS Lambda - AI 이미지 생성 모델 - AWS S3 스토리지 - Jenkins CI/CD',
+      architecture: 'React 프론트엔드 - REST API - AWS Lambda - AI 이미지 생성 모델 - AWS S3 스토리지',
       serviceFlow: '일기 작성 → AI 텍스트 분석 → 감정 및 키워드 추출 → 네컷 만화 생성 → 스타일 선택 → 결과 확인 → 저장/공유',
       myRole: [
         'React 기반 프론트엔드 전체 개발 (UI/UX 설계 포함)',
         'REST API 설계 및 백엔드와의 데이터 통신 구현',
         'AWS S3를 활용한 이미지 업로드 및 관리 시스템 구축',
-        'Jenkins를 이용한 CI/CD 파이프라인 구축 및 자동 배포',
-        'AWS 클라우드 인프라 설계 및 운영'
+        'AWS EC2를 이용한 서버 배포 및 운영'
       ],
-      technologies: ['React', 'AWS', 'REST API', 'Jenkins', 'S3'],
+      technologies: ['AWS EC2', 'S3', 'REST API', 'React'],
       color: '#2563eb'
     },
     'autoalarm': {
@@ -114,17 +112,16 @@ const ProjectDetail = () => {
         '사용자 맞춤형 알림 설정 (가격, 시간대, 변동률)',
         'SMS 인증을 통한 모바일 알림 서비스'
       ],
-      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - Jenkins CI/CD - AWS EKS 하이브리드 클라우드 - Prometheus/Grafana 모니터링',
+      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - AWS EKS 하이브리드 클라우드 - Prometheus/Grafana 모니터링',
       serviceFlow: '회원가입 → SMS 인증 → 관심 코인 설정 → 알림 조건 설정 → 실시간 모니터링 → 조건 만족 시 이중화된 메시지 시스템으로 알림 발송',
       myRole: [
         'VMware를 이용한 가상화 환경 구축 및 관리',
         'Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드 구성)',
         '하이브리드 클라우드 환경에서 메시지 이중화 시스템 구현',
         'React 기반 프론트엔드 개발 (대시보드, 설정 페이지)',
-        'Prometheus와 Grafana를 활용한 모니터링 시스템 구축',
-        'Jenkins CI/CD 파이프라인 구축 및 자동 배포 환경 구성'
+        'Prometheus와 Grafana를 활용한 모니터링 시스템 구축'
       ],
-      technologies: ['K8s', 'AWS', 'Jenkins', 'React', 'Prometheus'],
+      technologies: ['AWS EKS', 'K8s', 'Prometheus&Grafana', 'React'],
       color: '#2563eb'
     }
   };

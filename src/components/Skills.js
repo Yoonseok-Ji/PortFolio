@@ -10,19 +10,8 @@ const Skills = () => {
   });
 
   const skillsData = {
-    frontend: [
-      { name: 'React' },
-      { name: 'JavaScript' }
-    ],
-    devops: [
-      { name: 'AWS' },
-      { name: 'Docker' },
-      { name: 'K8s' },
-      { name: 'Jenkins' },
-      { name: 'Jira' },
-      { name: 'Prometheus' },
-      { name: 'Grafana' }
-    ]
+    frontend: ['React', 'JavaScript'],
+    devops: ['AWS', 'Docker', 'K8s', 'Jenkins', 'Jira', 'Prometheus', 'Grafana']
   };
 
   return (
@@ -40,9 +29,10 @@ const Skills = () => {
           <div className="skills-category">
             <h3>FRONTEND</h3>
             <div className="skills-list">
-              {skillsData.frontend.map((skill) => (
-                <span key={skill.name} className="skill-tag">
-                  {skill.name}
+              {skillsData.frontend.map((skill, index) => (
+                <span key={skill} className="skill-item">
+                  {skill}
+                  {index < skillsData.frontend.length - 1 && <span className="separator">•</span>}
                 </span>
               ))}
             </div>
@@ -51,9 +41,10 @@ const Skills = () => {
           <div className="skills-category">
             <h3>DEVOPS</h3>
             <div className="skills-list">
-              {skillsData.devops.map((skill) => (
-                <span key={skill.name} className="skill-tag">
-                  {skill.name}
+              {skillsData.devops.map((skill, index) => (
+                <span key={skill} className="skill-item">
+                  {skill}
+                  {index < skillsData.devops.length - 1 && <span className="separator">•</span>}
                 </span>
               ))}
             </div>

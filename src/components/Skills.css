@@ -26,7 +26,7 @@
 .skills-category h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2563eb;
+  color: #1f2937;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -34,23 +34,23 @@
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
   justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.skill-tag {
-  background: #2563eb;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.skill-item {
+  font-size: 1rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.skill-tag:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
+.separator {
+  color: #9ca3af;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
@@ -66,19 +66,22 @@
     padding: 1.5rem;
   }
 
-  .skills-list {
-    gap: 0.6rem;
-  }
-
-  .skill-tag {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+  .skill-item {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .skill-tag {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+  .skills-list {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .skill-item {
+    font-size: 0.85rem;
   }
 }

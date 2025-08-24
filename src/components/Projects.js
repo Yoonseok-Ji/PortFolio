@@ -22,19 +22,19 @@ const Projects = () => {
       color: '#2563eb'
     },
     {
-      id: 'dongne',
-      title: '동네형',
-      subtitle: 'UMC(전국 대학 연합 개발동아리)',
-      description: '트레이너와 회원 간 PT 매칭 웹 서비스',
-      technologies: ['REST API', 'React', 'JavaScript'],
-      color: '#2563eb'
-    },
-    {
       id: 'ttoon',
       title: 'TTOON',
       subtitle: '졸업프로젝트',
       description: 'AI가 만들어주는 일기를 네컷 만화로 바꿔주는 웹서비스',
       technologies: ['AWS EC2', 'S3', 'REST API', 'React'],
+      color: '#2563eb'
+    },
+    {
+      id: 'dongne',
+      title: '동네형',
+      subtitle: 'UMC(전국 대학 연합 개발동아리)',
+      description: '트레이너와 회원 간 PT 매칭 웹 서비스',
+      technologies: ['REST API', 'React'],
       color: '#2563eb'
     }
   ];
