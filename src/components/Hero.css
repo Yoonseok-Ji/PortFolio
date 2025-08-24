@@ -108,12 +108,12 @@
   font-weight: 600;
   color: #374151;
   min-width: 80px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .info-value {
   color: #6b7280;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .education-section {
@@ -160,7 +160,7 @@
 
 .card-header h4 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 

@@ -148,16 +148,19 @@ const ProjectDetail = () => {
     // CoinAlarm에는 이미지 표시 (coinalarm.png)
     if (projectId === 'autoalarm') {
       return (
-        <>
-          <img 
-            src={coinAlarmImage}
-            alt="CoinAlarm 스크린샷"
-            className={`project-screenshot ${mediaLoaded ? 'loaded' : ''}`}
-            onLoad={handleMediaLoad}
-            onError={handleMediaError}
-            loading="lazy"
-          />
-          {(mediaError || !mediaLoaded) && (
+        <div className="media-container">
+          {!mediaError ? (
+            <img 
+              src={coinAlarmImage}
+              alt="CoinAlarm 스크린샷"
+              className="project-screenshot"
+              onLoad={handleMediaLoad}
+              onError={handleMediaError}
+              loading="lazy"
+              style={{ display: mediaLoaded ? 'block' : 'none' }}
+            />
+          ) : null}
+          {(!mediaLoaded || mediaError) && (
             <div className="media-placeholder">
               <div className="placeholder-content">
                 <h3>🪙 CoinAlarm</h3>
@@ -166,25 +169,28 @@ const ProjectDetail = () => {
               </div>
             </div>
           )}
-        </>
+        </div>
       );
     }
     
     // TTOON에는 비디오 표시 (ttoon_video.mov)
     if (projectId === 'ttoon') {
       return (
-        <>
-          <video 
-            src={ttoonVideo}
-            alt="TTOON 데모 비디오"
-            className={`project-video ${mediaLoaded ? 'loaded' : ''}`}
-            controls
-            muted
-            preload="metadata"
-            onLoadedData={handleMediaLoad}
-            onError={handleMediaError}
-          />
-          {(mediaError || !mediaLoaded) && (
+        <div className="media-container">
+          {!mediaError ? (
+            <video 
+              src={ttoonVideo}
+              alt="TTOON 데모 비디오"
+              className="project-video"
+              controls
+              muted
+              preload="none"
+              onLoadedData={handleMediaLoad}
+              onError={handleMediaError}
+              style={{ display: mediaLoaded ? 'block' : 'none' }}
+            />
+          ) : null}
+          {(!mediaLoaded || mediaError) && (
             <div className="media-placeholder">
               <div className="placeholder-content">
                 <h3>🎨 TTOON</h3>
@@ -193,7 +199,7 @@ const ProjectDetail = () => {
               </div>
             </div>
           )}
-        </>
+        </div>
       );
     }
 

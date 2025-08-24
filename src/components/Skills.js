@@ -11,15 +11,17 @@ const Skills = () => {
 
   const skillsData = {
     frontend: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'JavaScript', icon: '🟨' },
-      { name: 'HTML/CSS', icon: '🌐' }
+      { name: 'React' },
+      { name: 'JavaScript' }
     ],
     devops: [
-      { name: 'AWS', icon: '☁️' },
-      { name: 'Docker', icon: '🐳' },
-      { name: 'K8s', icon: '☸️' },
-      { name: 'GitHub', icon: '💻' }
+      { name: 'AWS' },
+      { name: 'Docker' },
+      { name: 'K8s' },
+      { name: 'Jenkins' },
+      { name: 'Jira' },
+      { name: 'Prometheus' },
+      { name: 'Grafana' }
     ]
   };
 
@@ -37,24 +39,22 @@ const Skills = () => {
         <div className="skills-content">
           <div className="skills-category">
             <h3>FRONTEND</h3>
-            <div className="skills-grid">
+            <div className="skills-list">
               {skillsData.frontend.map((skill) => (
-                <div key={skill.name} className="skill-item">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <div className="skill-name">{skill.name}</div>
-                </div>
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>
 
           <div className="skills-category">
             <h3>DEVOPS</h3>
-            <div className="skills-grid">
+            <div className="skills-list">
               {skillsData.devops.map((skill) => (
-                <div key={skill.name} className="skill-item">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <div className="skill-name">{skill.name}</div>
-                </div>
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>
