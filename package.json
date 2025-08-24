@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dbstjrgudsla.github.io/PortFolio",
+  "homepage": "https://Yoonseok-Ji.github.io/PortFolio",
   "dependencies": {
     "framer-motion": "^10.16.4",
     "gh-pages": "^6.3.0",

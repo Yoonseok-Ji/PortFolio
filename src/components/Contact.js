@@ -33,7 +33,7 @@ const Contact = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/dbstjrgudsla',
+      url: 'https://github.com/Yoonseok-Ji',
       icon: '💻'
     },
     {
