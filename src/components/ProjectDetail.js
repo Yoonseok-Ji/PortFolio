@@ -7,12 +7,7 @@ import coinAlarmImage from '../pictures/coinalarm.png';
 import ttoonVideo from '../video/ttoon_video.mov';
 
 // CoinAlarm 프로젝트 이미지들
-let k8sImage, architectureImage, serviceFlowImage;
-try {
-  k8sImage = require('../pictures/k8s.png');
-} catch (e) {
-  k8sImage = null;
-}
+let architectureImage, serviceFlowImage;
 try {
   architectureImage = require('../pictures/architecture.png');
 } catch (e) {
@@ -295,27 +290,6 @@ const ProjectDetail = () => {
                 ))}
               </ul>
             </section>
-
-            {/* CoinAlarm 전용 K8s 섹션 */}
-            {projectId === 'autoalarm' && (
-              <section className="project-section">
-                <h2>Kubernetes 구조</h2>
-                <div className="image-container">
-                  {k8sImage ? (
-                    <img 
-                      src={k8sImage} 
-                      alt="Kubernetes 구조도" 
-                      className="section-image"
-                    />
-                  ) : (
-                    <div className="image-placeholder">
-                      <p>Kubernetes 클러스터 구조도</p>
-                      <small>마스터/워커 노드 구성 및 Pod 배치</small>
-                    </div>
-                  )}
-                </div>
-              </section>
-            )}
 
             {/* 아키텍처 */}
             <section className="project-section full-width">
