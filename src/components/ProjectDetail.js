@@ -410,16 +410,18 @@ const ProjectDetail = () => {
             </section>
 
             {/* 사용 기술 */}
-            <section className="project-section">
-              <h2>사용 기술</h2>
-              <div className="tech-stack">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </section>
+            {project.technologies && (
+              <section className="project-section">
+                <h2>사용 기술</h2>
+                <div className="tech-stack">
+                  {project.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </div>
