@@ -96,7 +96,7 @@ const ProjectDetail = () => {
       subtitle: '하이브리드 클라우드를 이용한 메시지 이중화',
       projectInfo: {
         name: 'CoinAlarm',
-        duration: '6개월 (2024.08 ~ 2025.02)',
+        duration: '2개월 (2025.01 ~ 2025.02)',
         members: '2명',
         platform: '웹 서비스 + 실시간 알림'
       },
@@ -122,6 +122,13 @@ const ProjectDetail = () => {
         '10개 마이크로서비스로 구성된 복합 시스템 설계 및 구현',
         'WebSocket을 통한 실시간 데이터 처리 (지연시간 < 100ms)',
         'Active-Active 구조로 고가용성 달성'
+      ],
+      reflection: [
+        '짧은 기간, 적은 인원으로 교육과정에서 배운 모든 기술을 적용해보고자 하는 욕심이 있었습니다.',
+        '보안 강화나 성능 최적화보다는 다양한 도구와 기술 스택을 경험하는 데 집중했습니다.',
+        'AWS EKS 대신 서버리스 아키텍처나 관리형 서비스를 활용했다면 더 효율적이었을 것 같습니다.',
+        '온프레미스 환경에서의 추가 실험을 계획했으나, 교육과정 종료로 인한 인프라 정리로 시도하지 못한 아쉬움이 있습니다.',
+        '결과적으로 다양한 기술 스택을 실제 프로젝트에 적용해본 값진 경험이었습니다.'
       ],
       color: '#2563eb'
     }
@@ -311,6 +318,42 @@ const ProjectDetail = () => {
               )}
             </section>
 
+            {/* 나의 역할 */}
+            {project.myRole && (
+              <section className="project-section full-width">
+                <h2>나의 역할</h2>
+                <ul className="role-list">
+                  {project.myRole.map((role, index) => (
+                    <li key={index}>{role}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* 주요 성과 (CoinAlarm만) */}
+            {projectId === 'autoalarm' && project.achievements && (
+              <section className="project-section">
+                <h2>주요 성과</h2>
+                <ul className="achievements-list">
+                  {project.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* 나의 소회 (CoinAlarm만) */}
+            {projectId === 'autoalarm' && project.reflection && (
+              <section className="project-section">
+                <h2>나의 소회</h2>
+                <ul className="reflection-list">
+                  {project.reflection.map((thought, index) => (
+                    <li key={index}>{thought}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             {/* CoinAlarm 전용 서비스 플로우 섹션 */}
             {projectId === 'autoalarm' && (
               <section className="project-section full-width">
@@ -360,30 +403,6 @@ const ProjectDetail = () => {
                     </div>
                   </div>
                 </div>
-              </section>
-            )}
-
-            {/* 주요 성과 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && project.achievements && (
-              <section className="project-section">
-                <h2>주요 성과</h2>
-                <ul className="achievements-list">
-                  {project.achievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* 나의 역할 */}
-            {project.myRole && (
-              <section className="project-section full-width">
-                <h2>나의 역할</h2>
-                <ul className="role-list">
-                  {project.myRole.map((role, index) => (
-                    <li key={index}>{role}</li>
-                  ))}
-                </ul>
               </section>
             )}
 

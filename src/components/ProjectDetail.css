@@ -423,6 +423,27 @@
   margin-bottom: 0;
 }
 
+.reflection-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reflection-list li {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0 8px 8px 0;
+  color: #92400e;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.reflection-list li:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1024px) {
   .project-hero {
     grid-template-columns: 1fr;
