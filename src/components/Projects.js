@@ -18,7 +18,6 @@ const Projects = () => {
       title: 'CoinAlarm',
       subtitle: '오토에버 모빌리티 SW스쿨',
       description: '가상화폐 자동 알림 서비스',
-      technologies: ['AWS EKS', 'K8s', 'Prometheus&Grafana', 'React'],
       color: '#2563eb'
     },
     {

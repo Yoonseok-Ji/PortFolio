@@ -107,30 +107,26 @@ const ProjectDetail = () => {
       },
       coreFeatures: [
         '실시간 가상화폐 시세 모니터링 및 WebSocket 기반 실시간 업데이트',
-        '마이크로서비스 아키텍처로 구성된 10개 서비스 (Frontend, WAS, Proxy, Worker 등)',
+        '마이크로서비스 아키텍처로 구성된 10개 서비스',
         'Terraform을 이용한 AWS EKS 인프라 코드화 (IaC)',
         'GitOps 방식의 자동 배포 파이프라인',
-        '실시간 모니터링 및 알림',
         '사용자 인증 시스템 및 개인화된 알림 설정'
       ],
-      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → AWS EKS → Monitoring Stack',
+      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → AWS EKS',
       serviceFlow: '사용자 접속 → React 대시보드 → WebSocket 실시간 연결 → 프록시 서버 → 업비트 API 연동 → 가격 데이터 처리 → 알림 조건 확인 → 실시간 알림 발송',
       myRole: [
         '🖥️ React 기반 프론트엔드 개발 (실시간 차트, 대시보드, 사용자 인증)',
         '🔗 Node.js 프록시 서버 개발 (WebSocket, 업비트 API 연동)',
-        '📊 실시간 모니터링 시스템 구축 및 알림 설정',
         '🚀 GitOps 기반 배포 파이프라인 구축',
         '🏗️ Terraform을 이용한 AWS EKS 인프라 자동화',
         '🐳 Docker 컨테이너화 및 이미지 관리'
       ],
-      technologies: ['AWS EKS', 'K8s', 'Prometheus&Grafana', 'React'],
       githubUrl: 'https://github.com/Yoonseok-Ji/CoinAlarm-Autoever_School_Project',
       achievements: [
-        '운영 경험을 통한 프로덕션 서비스 구축 노하우 습득',
+        '실제 서비스 운영경험 (coinalarm.click)',
         '10개 마이크로서비스로 구성된 복합 시스템 설계 및 구현',
         'WebSocket을 통한 실시간 데이터 처리 (지연시간 < 100ms)',
-        'Active-Active 구조로 고가용성 달성',
-        '실시간 모니터링으로 99.9% 서비스 가용성 달성'
+        'Active-Active 구조로 고가용성 달성'
       ],
       color: '#2563eb'
     }
