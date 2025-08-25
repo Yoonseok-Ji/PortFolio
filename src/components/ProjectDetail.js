@@ -282,14 +282,16 @@ const ProjectDetail = () => {
             </section>
 
             {/* 핵심 기능 */}
-            <section className="project-section">
-              <h2>핵심 기능</h2>
-              <ul className="features-list">
-                {project.coreFeatures.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </section>
+            {project.coreFeatures && (
+              <section className="project-section">
+                <h2>핵심 기능</h2>
+                <ul className="features-list">
+                  {project.coreFeatures.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* 아키텍처 */}
             <section className="project-section full-width">
@@ -374,14 +376,16 @@ const ProjectDetail = () => {
             )}
 
             {/* 나의 역할 */}
-            <section className="project-section full-width">
-              <h2>나의 역할</h2>
-              <ul className="role-list">
-                {project.myRole.map((role, index) => (
-                  <li key={index}>{role}</li>
-                ))}
-              </ul>
-            </section>
+            {project.myRole && (
+              <section className="project-section full-width">
+                <h2>나의 역할</h2>
+                <ul className="role-list">
+                  {project.myRole.map((role, index) => (
+                    <li key={index}>{role}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* 사용 기술 */}
             {project.technologies && (
