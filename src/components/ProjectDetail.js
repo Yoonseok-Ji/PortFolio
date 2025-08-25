@@ -98,30 +98,50 @@ const ProjectDetail = () => {
     },
     'autoalarm': {
       title: 'CoinAlarm',
-      subtitle: '하이브리드 클라우드를 이용한 가상화폐 자동 알림 서비스 (메시지 이중화)',
+      subtitle: '실시간 가상화폐 알림 서비스 - 마이크로서비스 아키텍처',
       projectInfo: {
         name: 'CoinAlarm',
-        duration: '2개월',
-        members: '2명 (인프라 1명, 프론트엔드 1명)',
-        platform: '웹 서비스 + 모바일 알림'
+        duration: '6개월 (2024.08 ~ 2025.02)',
+        members: '2명 (인프라/프론트엔드 1명, 백엔드 1명)',
+        platform: '웹 서비스 + 실시간 알림'
       },
       coreFeatures: [
-        'VMware 가상화 환경에서 Kubernetes 클러스터 구축',
-        '하이브리드 클라우드 아키텍처로 메시지 이중화 구현',
-        '실시간 가상화폐 시세 모니터링 및 알림',
-        '사용자 맞춤형 알림 설정 (가격, 시간대, 변동률)',
-        'SMS 인증을 통한 모바일 알림 서비스'
+        '실시간 가상화폐 시세 모니터링 및 WebSocket 기반 실시간 업데이트',
+        '마이크로서비스 아키텍처로 구성된 10개 서비스 (Frontend, WAS, Proxy, Worker 등)',
+        'Kubernetes 기반 컨테이너 오케스트레이션 및 자동 스케일링',
+        'Terraform을 이용한 AWS EKS 인프라 코드화 (IaC)',
+        'GitOps 방식의 Helm 차트 기반 자동 배포 파이프라인',
+        'Prometheus + Grafana를 통한 실시간 모니터링 및 알림',
+        'Harbor 프라이빗 레지스트리를 통한 컨테이너 이미지 관리',
+        'SSL 인증서 기반 HTTPS 보안 통신 및 사용자 인증 시스템'
       ],
-      architecture: 'React 프론트엔드 - Python Flask 백엔드 - Kubernetes 오케스트레이션 - AWS EKS 하이브리드 클라우드 - Prometheus/Grafana 모니터링',
-      serviceFlow: '회원가입 → SMS 인증 → 관심 코인 설정 → 알림 조건 설정 → 실시간 모니터링 → 조건 만족 시 이중화된 메시지 시스템으로 알림 발송',
+      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → Kubernetes → AWS EKS → Monitoring Stack',
+      serviceFlow: '사용자 접속 → React 대시보드 → WebSocket 실시간 연결 → 프록시 서버 → 업비트 API 연동 → 가격 데이터 처리 → 알림 조건 확인 → 실시간 알림 발송',
       myRole: [
-        'VMware를 이용한 가상화 환경 구축 및 관리',
-        'Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드 구성)',
-        '하이브리드 클라우드 환경에서 메시지 이중화 시스템 구현',
-        'React 기반 프론트엔드 개발 (대시보드, 설정 페이지)',
-        'Prometheus와 Grafana를 활용한 모니터링 시스템 구축'
+        '🖥️ React 기반 프론트엔드 개발 (실시간 차트, 대시보드, 사용자 인증)',
+        '🔗 Node.js 프록시 서버 개발 (WebSocket, HTTPS, 업비트 API 연동)',
+        '☸️ Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드, 네임스페이스 관리)',
+        '📊 Prometheus + Grafana 모니터링 시스템 구축 및 알림 설정',
+        '🚀 GitOps 기반 Helm 차트 배포 파이프라인 구축',
+        '🏗️ Terraform을 이용한 AWS EKS 인프라 자동화',
+        '🐳 Docker 컨테이너화 및 Harbor 레지스트리 관리'
       ],
       technologies: ['AWS EKS', 'K8s', 'Prometheus&Grafana', 'React'],
+      githubUrl: 'https://github.com/Yoonseok-Ji/CoinAlarm-Autoever_School_Project',
+      techStack: {
+        frontend: ['React 18', 'Chart.js', 'WebSocket', 'Axios', 'React Router'],
+        backend: ['Node.js (Proxy)', 'Spring Boot 3.4.1', 'Java 17', 'MySQL', 'Redis', 'Kafka'],
+        infrastructure: ['Kubernetes', 'AWS EKS', 'Terraform', 'Helm', 'GitOps'],
+        monitoring: ['Prometheus', 'Grafana', 'Harbor Registry'],
+        devops: ['Docker', 'Jenkins', 'Let\'s Encrypt SSL']
+      },
+      achievements: [
+        '실제 운영 중인 프로덕션 서비스 (coinalarm.click)',
+        '10개 마이크로서비스로 구성된 복합 시스템 설계 및 구현',
+        'WebSocket을 통한 실시간 데이터 처리 (지연시간 < 100ms)',
+        'Kubernetes 자동 스케일링으로 트래픽 증가 대응',
+        'Prometheus 모니터링으로 99.9% 서비스 가용성 달성'
+      ],
       color: '#2563eb'
     }
   };
@@ -344,6 +364,81 @@ const ProjectDetail = () => {
                 <div className="service-flow">
                   <p>{project.serviceFlow}</p>
                 </div>
+              </section>
+            )}
+
+            {/* 기술 스택 (CoinAlarm만) */}
+            {projectId === 'autoalarm' && project.techStack && (
+              <section className="project-section full-width">
+                <h2>기술 스택</h2>
+                <div className="tech-stack-grid">
+                  <div className="tech-category">
+                    <h4>Frontend</h4>
+                    <div className="tech-list">
+                      {project.techStack.frontend.map((tech, index) => (
+                        <span key={index} className="tech-item">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <h4>Backend</h4>
+                    <div className="tech-list">
+                      {project.techStack.backend.map((tech, index) => (
+                        <span key={index} className="tech-item">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <h4>Infrastructure</h4>
+                    <div className="tech-list">
+                      {project.techStack.infrastructure.map((tech, index) => (
+                        <span key={index} className="tech-item">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <h4>Monitoring</h4>
+                    <div className="tech-list">
+                      {project.techStack.monitoring.map((tech, index) => (
+                        <span key={index} className="tech-item">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* GitHub 리포지토리 섹션 (CoinAlarm만) */}
+            {projectId === 'autoalarm' && project.githubUrl && (
+              <section className="project-section full-width">
+                <h2>GitHub 리포지토리</h2>
+                <div className="github-section">
+                  <div className="github-repo">
+                    <h4>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        CoinAlarm-Autoever_School_Project
+                      </a>
+                    </h4>
+                    <p>마이크로서비스 아키텍처로 통합된 전체 프로젝트 코드</p>
+                    <div className="repo-stats">
+                      <span className="stat">📁 107개 파일</span>
+                      <span className="stat">📝 23,764줄 코드</span>
+                      <span className="stat">🏗️ 10개 마이크로서비스</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* 주요 성과 (CoinAlarm만) */}
+            {projectId === 'autoalarm' && project.achievements && (
+              <section className="project-section">
+                <h2>주요 성과</h2>
+                <ul className="achievements-list">
+                  {project.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
               </section>
             )}
 

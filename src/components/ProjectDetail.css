@@ -321,6 +321,102 @@
   color: #9ca3af;
 }
 
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tech-category {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.tech-category h4 {
+  color: #2563eb;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-item {
+  background: #2563eb;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.github-repo {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.github-repo h4 {
+  margin: 0 0 0.5rem 0;
+}
+
+.github-repo h4 a {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.github-repo h4 a:hover {
+  text-decoration: underline;
+}
+
+.github-repo p {
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: #e5e7eb;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li {
+  background: #f0f9ff;
+  border-left: 4px solid #2563eb;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0 8px 8px 0;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.achievements-list li:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1024px) {
   .project-hero {
     grid-template-columns: 1fr;

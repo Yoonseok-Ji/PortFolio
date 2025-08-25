@@ -83,7 +83,7 @@ const Hero = () => {
                   <div className="card-content">
                     <div className="experience-item">
                       <div className="exp-title">UMC(전국 대학연합 개발 동아리)</div>
-                      <div className="exp-role">프론트엔드 팀장</div>
+                      <div className="exp-role">프론트엔드 팀장 (2023.09 ~ 2024.03)</div>
                       <ul className="exp-details">
                         <li>매주 워크북 기반 프론트엔드 개념 학습 및 팀원 멘토링</li>
                         <li>React 기반 사이드 프로젝트 주도적 수행</li>
@@ -94,7 +94,7 @@ const Hero = () => {
 
                     <div className="experience-item">
                       <div className="exp-title">현대오토에버 모빌리티 SW 스쿨 클라우드 과정</div>
-                      <div className="exp-role">클라우드 엔지니어 과정 수료</div>
+                      <div className="exp-role">클라우드 엔지니어 과정 수료 (2024.08 ~ 2025.02)</div>
                       <ul className="exp-details">
                         <li>Docker, K8s 및 퍼블릭 클라우드, DevOps 교육과정 이수</li>
                         <li>K8s + AWS EKS 하이브리드 클라우드 아키텍처 기획·구현</li>
