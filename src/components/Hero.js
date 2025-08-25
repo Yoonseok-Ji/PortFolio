@@ -78,7 +78,7 @@ const Hero = () => {
 
                 <div className="education-card">
                   <div className="card-header">
-                    <h4>💼 경력 및 활동</h4>
+                    <h4>💼 활동</h4>
                   </div>
                   <div className="card-content">
                     <div className="experience-item">

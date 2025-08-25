@@ -98,49 +98,39 @@ const ProjectDetail = () => {
     },
     'autoalarm': {
       title: 'CoinAlarm',
-      subtitle: '실시간 가상화폐 알림 서비스 - 마이크로서비스 아키텍처',
+      subtitle: '하이브리드 클라우드를 이용한 메시지 이중화',
       projectInfo: {
         name: 'CoinAlarm',
         duration: '6개월 (2024.08 ~ 2025.02)',
-        members: '2명 (인프라/프론트엔드 1명, 백엔드 1명)',
+        members: '2명',
         platform: '웹 서비스 + 실시간 알림'
       },
       coreFeatures: [
         '실시간 가상화폐 시세 모니터링 및 WebSocket 기반 실시간 업데이트',
         '마이크로서비스 아키텍처로 구성된 10개 서비스 (Frontend, WAS, Proxy, Worker 등)',
-        'Kubernetes 기반 컨테이너 오케스트레이션 및 자동 스케일링',
         'Terraform을 이용한 AWS EKS 인프라 코드화 (IaC)',
-        'GitOps 방식의 Helm 차트 기반 자동 배포 파이프라인',
-        'Prometheus + Grafana를 통한 실시간 모니터링 및 알림',
-        'Harbor 프라이빗 레지스트리를 통한 컨테이너 이미지 관리',
-        'SSL 인증서 기반 HTTPS 보안 통신 및 사용자 인증 시스템'
+        'GitOps 방식의 자동 배포 파이프라인',
+        '실시간 모니터링 및 알림',
+        '사용자 인증 시스템 및 개인화된 알림 설정'
       ],
-      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → Kubernetes → AWS EKS → Monitoring Stack',
+      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → AWS EKS → Monitoring Stack',
       serviceFlow: '사용자 접속 → React 대시보드 → WebSocket 실시간 연결 → 프록시 서버 → 업비트 API 연동 → 가격 데이터 처리 → 알림 조건 확인 → 실시간 알림 발송',
       myRole: [
         '🖥️ React 기반 프론트엔드 개발 (실시간 차트, 대시보드, 사용자 인증)',
-        '🔗 Node.js 프록시 서버 개발 (WebSocket, HTTPS, 업비트 API 연동)',
-        '☸️ Kubernetes 클러스터 설계 및 구축 (마스터/워커 노드, 네임스페이스 관리)',
-        '📊 Prometheus + Grafana 모니터링 시스템 구축 및 알림 설정',
-        '🚀 GitOps 기반 Helm 차트 배포 파이프라인 구축',
+        '🔗 Node.js 프록시 서버 개발 (WebSocket, 업비트 API 연동)',
+        '📊 실시간 모니터링 시스템 구축 및 알림 설정',
+        '🚀 GitOps 기반 배포 파이프라인 구축',
         '🏗️ Terraform을 이용한 AWS EKS 인프라 자동화',
-        '🐳 Docker 컨테이너화 및 Harbor 레지스트리 관리'
+        '🐳 Docker 컨테이너화 및 이미지 관리'
       ],
       technologies: ['AWS EKS', 'K8s', 'Prometheus&Grafana', 'React'],
       githubUrl: 'https://github.com/Yoonseok-Ji/CoinAlarm-Autoever_School_Project',
-      techStack: {
-        frontend: ['React 18', 'Chart.js', 'WebSocket', 'Axios', 'React Router'],
-        backend: ['Node.js (Proxy)', 'Spring Boot 3.4.1', 'Java 17', 'MySQL', 'Redis', 'Kafka'],
-        infrastructure: ['Kubernetes', 'AWS EKS', 'Terraform', 'Helm', 'GitOps'],
-        monitoring: ['Prometheus', 'Grafana', 'Harbor Registry'],
-        devops: ['Docker', 'Jenkins', 'Let\'s Encrypt SSL']
-      },
       achievements: [
-        '실제 운영 중인 프로덕션 서비스 (coinalarm.click)',
+        '운영 경험을 통한 프로덕션 서비스 구축 노하우 습득',
         '10개 마이크로서비스로 구성된 복합 시스템 설계 및 구현',
         'WebSocket을 통한 실시간 데이터 처리 (지연시간 < 100ms)',
-        'Kubernetes 자동 스케일링으로 트래픽 증가 대응',
-        'Prometheus 모니터링으로 99.9% 서비스 가용성 달성'
+        'Active-Active 구조로 고가용성 달성',
+        '실시간 모니터링으로 99.9% 서비스 가용성 달성'
       ],
       color: '#2563eb'
     }
@@ -166,18 +156,24 @@ const ProjectDetail = () => {
     if (projectId === 'autoalarm') {
       return (
         <div className="media-container">
-          {!mediaError ? (
-            <img 
-              src={coinAlarmImage}
-              alt="CoinAlarm 스크린샷"
-              className="project-screenshot"
-              onLoad={handleMediaLoad}
-              onError={handleMediaError}
-              loading="lazy"
-              style={{ display: mediaLoaded ? 'block' : 'none' }}
-            />
-          ) : null}
-          {(!mediaLoaded || mediaError) && (
+          <img 
+            src={coinAlarmImage}
+            alt="CoinAlarm 스크린샷"
+            className="project-screenshot"
+            onLoad={handleMediaLoad}
+            onError={handleMediaError}
+            loading="eager"
+          />
+          {(!mediaLoaded && !mediaError) && (
+            <div className="media-placeholder">
+              <div className="placeholder-content">
+                <h3>🪙 CoinAlarm</h3>
+                <p>가상화폐 알림 서비스</p>
+                <small>이미지 로딩 중...</small>
+              </div>
+            </div>
+          )}
+          {mediaError && (
             <div className="media-placeholder">
               <div className="placeholder-content">
                 <h3>🪙 CoinAlarm</h3>
@@ -194,20 +190,26 @@ const ProjectDetail = () => {
     if (projectId === 'ttoon') {
       return (
         <div className="media-container">
-          {!mediaError ? (
-            <video 
-              src={ttoonVideo}
-              alt="TTOON 데모 비디오"
-              className="project-video"
-              controls
-              muted
-              preload="none"
-              onLoadedData={handleMediaLoad}
-              onError={handleMediaError}
-              style={{ display: mediaLoaded ? 'block' : 'none' }}
-            />
-          ) : null}
-          {(!mediaLoaded || mediaError) && (
+          <video 
+            src={ttoonVideo}
+            alt="TTOON 데모 비디오"
+            className="project-video"
+            controls
+            muted
+            preload="metadata"
+            onLoadedData={handleMediaLoad}
+            onError={handleMediaError}
+          />
+          {(!mediaLoaded && !mediaError) && (
+            <div className="media-placeholder">
+              <div className="placeholder-content">
+                <h3>🎨 TTOON</h3>
+                <p>AI 네컷 만화 생성기</p>
+                <small>비디오 로딩 중...</small>
+              </div>
+            </div>
+          )}
+          {mediaError && (
             <div className="media-placeholder">
               <div className="placeholder-content">
                 <h3>🎨 TTOON</h3>
@@ -363,47 +365,6 @@ const ProjectDetail = () => {
                 <h2>서비스 플로우</h2>
                 <div className="service-flow">
                   <p>{project.serviceFlow}</p>
-                </div>
-              </section>
-            )}
-
-            {/* 기술 스택 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && project.techStack && (
-              <section className="project-section full-width">
-                <h2>기술 스택</h2>
-                <div className="tech-stack-grid">
-                  <div className="tech-category">
-                    <h4>Frontend</h4>
-                    <div className="tech-list">
-                      {project.techStack.frontend.map((tech, index) => (
-                        <span key={index} className="tech-item">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="tech-category">
-                    <h4>Backend</h4>
-                    <div className="tech-list">
-                      {project.techStack.backend.map((tech, index) => (
-                        <span key={index} className="tech-item">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="tech-category">
-                    <h4>Infrastructure</h4>
-                    <div className="tech-list">
-                      {project.techStack.infrastructure.map((tech, index) => (
-                        <span key={index} className="tech-item">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="tech-category">
-                    <h4>Monitoring</h4>
-                    <div className="tech-list">
-                      {project.techStack.monitoring.map((tech, index) => (
-                        <span key={index} className="tech-item">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </section>
             )}
