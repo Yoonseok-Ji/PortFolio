@@ -72,13 +72,15 @@ const Projects = () => {
               
               <p className="project-description">{project.description}</p>
               
-              <div className="project-technologies">
-                {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              {project.technologies && (
+                <div className="project-technologies">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
 
               <div className="project-footer">
                 <span className="view-details">자세히 보기 →</span>
