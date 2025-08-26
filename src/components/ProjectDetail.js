@@ -120,19 +120,19 @@ const ProjectDetail = () => {
         cases: [
           {
             title: '1. SSL 인증서 관련 문제',
-            content: 'HTTPS 환경에서 WebSocket 연결 시 SSL 인증서 불일치 문제 → Let\'s Encrypt 무료 SSL 인증서 발급 및 Ingress Controller TLS 설정으로 해결'
+            content: '문제배경: HTTPS 환경에서 WebSocket 연결 시 SSL 인증서 불일치로 인한 연결 실패 발생. 해결방법: Let\'s Encrypt를 이용한 무료 SSL 인증서 발급 및 자동 갱신 설정, Ingress Controller에 TLS 설정 적용. 이전과 비교: HTTP 환경에서만 동작 → HTTPS 환경에서 안전한 WebSocket 연결 지원. 학습내용: HTTPS 환경에서의 WebSocket 보안 연결 구성 방법과 SSL 인증서 관리의 중요성 학습'
           },
           {
             title: '2. ArgoCD 배포 오류 문제', 
-            content: 'GitOps 파이프라인에서 YAML 파일 구문 오류 및 리소스 충돌 → Helm Chart 템플릿화 및 YAML 린터 도구 적용으로 안정적 배포 구현'
+            content: '문제배경: GitOps 파이프라인에서 YAML 파일 구문 오류 및 리소스 충돌로 인한 배포 실패. 해결방법: Helm Chart를 이용한 템플릿화, YAML 린터 도구 적용, 단계별 배포 전략 수립. 이전과 비교: 수동 kubectl 배포로 인한 휴먼 에러 → 자동화된 GitOps 파이프라인으로 안정적 배포. 학습내용: GitOps의 장점과 YAML 관리의 중요성, Helm을 통한 Kubernetes 애플리케이션 패키징 방법 습득'
           },
           {
             title: '3. 제한된 포트 환경 문제',
-            content: '학원 데이터센터의 10개 포트 제한으로 마이크로서비스 노출 어려움 → Ingress Controller 단일 진입점 구성 및 경로 기반 라우팅으로 해결'
+            content: '문제배경: 학원 데이터센터 환경에서 외부 접근 가능한 포트가 10개로 제한되어 다수의 마이크로서비스 노출에 어려움. 해결방법: Ingress Controller를 이용한 단일 진입점 구성, 경로 기반 라우팅으로 여러 서비스를 하나의 포트로 통합. 이전과 비교: 각 서비스마다 별도 포트 필요 → 단일 포트(80/443)로 모든 서비스 접근 가능. 학습내용: Ingress Controller의 활용법과 네트워크 제약 환경에서의 아키텍처 설계 능력 향상'
           },
           {
             title: '4. 리소스 부족 Pod 스케줄링 실패',
-            content: '온프레미스 환경의 제한된 리소스로 Pod 스케줄링 실패 → Resource Requests/Limits 최적화 및 HPA 설정으로 효율적 리소스 관리 구현'
+            content: '문제배경: 온프레미스 환경의 제한된 리소스로 인해 모든 Pod가 정상적으로 스케줄링되지 않는 문제. 해결방법: Resource Requests/Limits 최적화, HPA(Horizontal Pod Autoscaler) 설정, 우선순위 기반 Pod 스케줄링 적용. 이전과 비교: 리소스 과할당으로 인한 불안정한 서비스 → 효율적인 리소스 관리로 안정적인 서비스 운영. 학습내용: Kubernetes 리소스 관리의 중요성과 제한된 환경에서의 최적화 기법 습득'
           }
         ]
       },
@@ -251,14 +251,25 @@ const ProjectDetail = () => {
             <h1 className="project-title">{project.title}</h1>
             <p className="project-subtitle">{project.subtitle}</p>
             
-            {/* GitHub 링크만 추가 */}
-            {project.githubUrl && (
-              <div className="github-link">
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="github-btn">
+            {/* 프로젝트 기본 정보 추가 */}
+            <div className="project-basic-info">
+              <div className="info-item">
+                <strong>인원:</strong> 2명
+              </div>
+              <div className="info-item">
+                <strong>개발기간:</strong> 2024.12 ~ 2025.02
+              </div>
+              <div className="info-item">
+                <strong>주제:</strong> 하이브리드 클라우드를 이용한 메시지 발송 이중화
+              </div>
+              
+              {/* GitHub 링크 */}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="github-link">
                   GitHub Repository
                 </a>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
           <div className="imac-mockup">

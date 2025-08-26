@@ -723,25 +723,36 @@
   background: #059669;
   transform: translateY(-1px);
 }
+/* 프로젝트 기본 정보 스타일 */
+.project-basic-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.info-item {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-item strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
 /* 깔끔한 GitHub 링크 스타일 */
 .github-link {
-  margin-top: 1.5rem;
-}
-
-.github-btn {
-  display: inline-block;
-  background: #24292e;
-  color: white;
+  color: #6b7280;
   text-decoration: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
 }
 
-.github-btn:hover {
-  background: #1b1f23;
-  transform: translateY(-1px);
+.github-link:hover {
+  color: #374151;
 }
 
 /* 간단한 역할 리스트 */
