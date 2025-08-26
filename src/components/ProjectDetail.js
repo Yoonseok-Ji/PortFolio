@@ -335,6 +335,20 @@ const ProjectDetail = () => {
                   )}
                 </section>
 
+                {/* 서비스 플로우 */}
+                <section className="project-section full-width">
+                  <h2>서비스 플로우</h2>
+                  {serviceFlowImage && (
+                    <div className="image-container">
+                      <img 
+                        src={serviceFlowImage} 
+                        alt="서비스 플로우" 
+                        className="section-image"
+                      />
+                    </div>
+                  )}
+                </section>
+
                 {/* 나의 역할 */}
                 <section className="project-section full-width">
                   <h2>{project.myRole.title}</h2>
@@ -420,58 +434,6 @@ const ProjectDetail = () => {
                   </section>
                 )}
               </>
-            )}
-
-            {/* CoinAlarm 전용 서비스 플로우 섹션 */}
-            {projectId === 'autoalarm' && (
-              <section className="project-section full-width">
-                <h2>서비스 플로우</h2>
-                <div className="image-container">
-                  {serviceFlowImage ? (
-                    <img 
-                      src={serviceFlowImage} 
-                      alt="서비스 플로우" 
-                      className="section-image"
-                    />
-                  ) : (
-                    <div className="service-flow">
-                      <p>{project.serviceFlow}</p>
-                    </div>
-                  )}
-                </div>
-              </section>
-            )}
-
-            {/* 다른 프로젝트의 서비스 플로우 */}
-            {projectId !== 'autoalarm' && (
-              <section className="project-section full-width">
-                <h2>서비스 플로우</h2>
-                <div className="service-flow">
-                  <p>{project.serviceFlow}</p>
-                </div>
-              </section>
-            )}
-
-            {/* GitHub 리포지토리 섹션 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && project.githubUrl && (
-              <section className="project-section full-width">
-                <h2>GitHub 리포지토리</h2>
-                <div className="github-section">
-                  <div className="github-repo">
-                    <h4>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        CoinAlarm-Autoever_School_Project
-                      </a>
-                    </h4>
-                    <p>마이크로서비스 아키텍처로 통합된 전체 프로젝트 코드</p>
-                    <div className="repo-stats">
-                      <span className="stat">📁 107개 파일</span>
-                      <span className="stat">📝 23,764줄 코드</span>
-                      <span className="stat">🏗️ 10개 마이크로서비스</span>
-                    </div>
-                  </div>
-                </div>
-              </section>
             )}
 
             {/* 사용 기술 */}
