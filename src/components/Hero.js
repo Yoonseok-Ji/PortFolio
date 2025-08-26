@@ -41,18 +41,8 @@ const Hero = () => {
               </div>
               
               <div className="hero-description">
-                <p>새로운 것을 배우는 데 두려움이 없고,<br />
-                빠르게 변화하는 기술 환경 속에서 성장하는 것을 즐깁니다.<br />
-                사람들과 함께 소통하고 협업하며, 긍정적인 에너지를 나누는 것을 좋아합니다.🌱</p>
-                
-                <p>☁️ 인프라와 클라우드를 중심으로 꾸준히 실습하며 성장 중입니다.<br />
-                Docker, Kubernetes, AWS를 중심으로 다양한 실습을 진행하고,<br />
-                직접 문제를 해결하며 몸에 익히는 과정을 즐깁니다.<br />
-                이 과정에서 경험한 것들을 블로그에 기록하며 공유하고 있습니다.</p>
-                
-                <p>🔍 문제를 깊이 파고들고, 더 나은 구조를 고민합니다.<br />
-                단순히 되는 것보다 '왜 되는지'를 이해하고,<br />
-                지속 가능하고 안정적인 인프라를 만드는 것을 목표로 하고 있습니다.</p>
+                <p>새로운 기술을 두려워하지 않고, 빠르게 변화하는 환경에서 성장을 즐기며,<br />
+                팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다. 🌱</p>
               </div>
             </div>
           </motion.div>
@@ -68,24 +58,24 @@ const Hero = () => {
             <div className="characteristics">
               <div className="char-grid">
                 <div className="char-item">
-                  <div className="char-icon">🚀</div>
+                  <div className="char-icon">☁️</div>
                   <div className="char-text">
-                    <h4>바로 행동하는 실행형</h4>
-                    <p>계획보다 실행을 우선시하며, 작은 것부터 직접 해보는 것을 선호합니다. 시행착오를 통한 학습을 중요하게 생각합니다.</p>
+                    <h4>클라우드 인프라 실습</h4>
+                    <p>Docker, Kubernetes, AWS를 중심으로 다양한 실습을 진행하며, 직접 문제를 해결하는 과정을 즐깁니다.</p>
                   </div>
                 </div>
                 <div className="char-item">
-                  <div className="char-icon">🔄</div>
+                  <div className="char-icon">🔍</div>
                   <div className="char-text">
-                    <h4>변화에 유연한 적응력</h4>
-                    <p>새로운 환경과 예상치 못한 상황에 빠르게 적응하며, 기존 방식에 얽매이지 않고 더 나은 방법을 모색합니다.</p>
+                    <h4>깊이 있는 문제 해결</h4>
+                    <p>단순히 되는 것보다 '왜 되는지'를 이해하고, 지속 가능하고 안정적인 구조를 고민합니다.</p>
                   </div>
                 </div>
                 <div className="char-item">
-                  <div className="char-icon">😊</div>
+                  <div className="char-icon">📝</div>
                   <div className="char-text">
-                    <h4>문제 속에서도 웃는 긍정 마인드</h4>
-                    <p>어려운 상황에서도 해결책을 찾는 데 집중하며, 긍정적인 태도로 팀 분위기를 밝게 만들어갑니다.</p>
+                    <h4>경험 공유와 기록</h4>
+                    <p>학습하고 경험한 것들을 블로그에 기록하며, 지식을 공유하고 함께 성장하는 것을 추구합니다.</p>
                   </div>
                 </div>
               </div>
