@@ -14,7 +14,6 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="profile-section">
-          >
             <div className="profile-left">
               <div className="profile-image">
                 <div className="image-placeholder">
@@ -38,7 +37,6 @@ const Hero = () => {
 
           {/* About Me 섹션 통합 */}
           <div className="about-section">
-          >
             <div className="characteristics">
               <div className="char-grid">
                 <div className="char-item">
