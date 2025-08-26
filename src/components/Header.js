@@ -44,17 +44,6 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('about');
-                }}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
                 href="#skills"
                 onClick={(e) => {
                   e.preventDefault();

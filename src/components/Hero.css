@@ -75,45 +75,80 @@
 }
 
 .hero-greeting {
-  font-size: 1.1rem;
-  color: #6b7280;
-  font-weight: 500;
-}
-
-.hero-name {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
   color: #1f2937;
-  line-height: 1.3;
-  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .name-highlight {
   color: #2563eb;
 }
 
-.profile-info {
+.hero-description {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 
-.info-item2 {
+.hero-description p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* About 섹션 통합 스타일 */
+.about-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.characteristics {
+  width: 100%;
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.char-item {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.info-label {
+.char-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.char-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.char-text h4 {
+  color: #1f2937;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #374151;
-  min-width: 80px;
-  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
 }
 
-.info-value {
+.char-text p {
   color: #6b7280;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .education-section {
@@ -298,6 +333,11 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .char-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -316,12 +356,13 @@
   }
 
   .profile-section,
-  .education-section {
+  .education-section,
+  .about-section {
     padding: 2rem;
   }
 
-  .hero-name {
-    font-size: 1.8rem;
+  .hero-greeting {
+    font-size: 1.2rem;
   }
 
   .education-text {
@@ -349,7 +390,8 @@
 
 @media (max-width: 480px) {
   .profile-section,
-  .education-section {
+  .education-section,
+  .about-section {
     padding: 1.5rem;
   }
 
@@ -362,17 +404,13 @@
     font-size: 2rem;
   }
 
-  .hero-name {
-    font-size: 1.6rem;
+  .hero-greeting {
+    font-size: 1.1rem;
   }
 
-  .info-item2 {
+  .char-item {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-  }
-
-  .info-label {
-    min-width: auto;
+    text-align: center;
+    gap: 0.8rem;
   }
 }
