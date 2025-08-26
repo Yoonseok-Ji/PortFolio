@@ -75,7 +75,7 @@
 }
 
 .hero-greeting {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #1f2937;
   font-weight: 600;
   line-height: 1.4;
@@ -93,7 +93,7 @@
 
 .hero-description p {
   color: #4b5563;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -362,7 +362,7 @@
   }
 
   .hero-greeting {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .education-text {
@@ -405,7 +405,7 @@
   }
 
   .hero-greeting {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .char-item {

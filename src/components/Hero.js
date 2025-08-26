@@ -37,12 +37,12 @@ const Hero = () => {
             
             <div className="profile-right">
               <div className="hero-greeting">
-                👋 안녕하세요, 클라우드 엔지니어 <span className="name-highlight">지윤석</span>입니다.
+                안녕하세요, 클라우드 엔지니어 <span className="name-highlight">지윤석</span>입니다.
               </div>
               
               <div className="hero-description">
                 <p>새로운 기술을 두려워하지 않고, 빠르게 변화하는 환경에서 성장을 즐기며,<br />
-                팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다. 🌱</p>
+                팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다.</p>
               </div>
             </div>
           </motion.div>
