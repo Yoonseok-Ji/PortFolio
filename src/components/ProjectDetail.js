@@ -93,43 +93,113 @@ const ProjectDetail = () => {
     },
     'autoalarm': {
       title: 'CoinAlarm',
-      subtitle: '하이브리드 클라우드를 이용한 메시지 이중화',
+      subtitle: '실시간 코인 예약알림 서비스',
       projectInfo: {
         name: 'CoinAlarm',
         duration: '2개월 (2025.01 ~ 2025.02)',
         members: '2명',
-        platform: '웹 서비스 + 실시간 알림'
+        theme: '하이브리드 클라우드를 이용한 메시지 이중화'
       },
-      coreFeatures: [
-        '실시간 가상화폐 시세 모니터링 및 WebSocket 기반 실시간 업데이트',
-        '마이크로서비스 아키텍처로 구성된 10개 서비스',
-        'Terraform을 이용한 AWS EKS 인프라 코드화 (IaC)',
-        'GitOps 방식의 자동 배포 파이프라인',
-        '사용자 인증 시스템 및 개인화된 알림 설정'
-      ],
-      architecture: 'React Frontend → Proxy Server → WAS (Spring Boot) → Worker Services → AWS EKS',
-      serviceFlow: '사용자 접속 → React 대시보드 → WebSocket 실시간 연결 → 프록시 서버 → 업비트 API 연동 → 가격 데이터 처리 → 알림 조건 확인 → 실시간 알림 발송',
-      myRole: [
-        '🖥️ React 기반 프론트엔드 개발 (실시간 차트, 대시보드, 사용자 인증)',
-        '🔗 Node.js 프록시 서버 개발 (WebSocket, 업비트 API 연동)',
-        '🚀 GitOps 기반 배포 파이프라인 구축',
-        '🏗️ Terraform을 이용한 AWS EKS 인프라 자동화',
-        '🐳 Docker 컨테이너화 및 이미지 관리'
-      ],
+      architecture: {
+        title: '아키텍처',
+        description: 'AWS EKS와 온프레미스 Kubernetes를 결합한 하이브리드 클라우드 아키텍처로 구성. 마이크로서비스 패턴을 적용하여 10개의 독립적인 서비스로 분리하고, GitOps 방식의 자동 배포 파이프라인을 구축했습니다.',
+        details: [
+          'Frontend: React 기반 실시간 대시보드',
+          'Proxy Server: Node.js WebSocket 서버 (업비트 API 연동)',
+          'Backend Services: Spring Boot 기반 마이크로서비스',
+          'Infrastructure: AWS EKS + 온프레미스 Kubernetes',
+          'Monitoring: Prometheus + Grafana',
+          'Load Balancer: HAProxy (Active-Active 구성)'
+        ]
+      },
+      serviceFlow: {
+        title: '서비스 플로우',
+        steps: [
+          '사용자가 React 대시보드에 접속하여 실시간 코인 시세 확인',
+          'WebSocket을 통해 프록시 서버와 실시간 연결 수립',
+          '프록시 서버가 업비트 API로부터 실시간 가격 데이터 수신',
+          'Price Worker가 가격 데이터를 처리하고 알림 조건 확인',
+          '조건 만족 시 Alarm Server를 통해 사용자에게 실시간 알림 발송',
+          'HAProxy를 통한 로드밸런싱으로 고가용성 보장'
+        ]
+      },
+      myRole: {
+        title: '나의 역할',
+        details: [
+          {
+            category: '🏗️ 인프라 구축 및 운영',
+            tasks: [
+              'AWS EKS 클러스터 구축 및 온프레미스 Kubernetes와의 하이브리드 환경 설계',
+              'Terraform을 이용한 Infrastructure as Code (IaC) 구현',
+              'GitOps 방식의 ArgoCD 기반 자동 배포 파이프라인 구축',
+              'HAProxy를 이용한 Active-Active 로드밸런서 구성으로 고가용성 달성'
+            ]
+          },
+          {
+            category: '📊 모니터링 시스템 구축',
+            tasks: [
+              'Prometheus + Grafana를 이용한 종합 모니터링 시스템 구축',
+              '직접 PromQL 쿼리를 작성하여 CPU, 메모리, 네트워크, 애플리케이션 메트릭 수집',
+              'Kubernetes 클러스터, Node, Pod 상태 모니터링 대시보드 구성',
+              'Alert Manager를 통한 장애 상황 자동 알림 시스템 구현'
+            ]
+          },
+          {
+            category: '💻 프론트엔드 개발',
+            tasks: [
+              'React 기반 실시간 코인 시세 대시보드 개발',
+              'WebSocket을 이용한 실시간 데이터 업데이트 구현',
+              '사용자 인증 시스템 및 개인화된 알림 설정 UI 개발',
+              '반응형 웹 디자인으로 모바일 최적화'
+            ]
+          },
+          {
+            category: '🔗 프록시 서버 개발',
+            tasks: [
+              'Node.js 기반 WebSocket 프록시 서버 개발',
+              '업비트 API와의 실시간 연동으로 코인 시세 데이터 수집',
+              'WebSocket 연결 관리 및 클라이언트별 데이터 브로드캐스팅',
+              'API 레이트 리미팅 및 에러 핸들링 구현'
+            ]
+          }
+        ]
+      },
+      troubleShooting: {
+        title: '트러블 슈팅',
+        cases: [
+          {
+            problem: 'SSL 인증서 관련 문제',
+            background: 'HTTPS 환경에서 WebSocket 연결 시 SSL 인증서 불일치로 인한 연결 실패 발생',
+            solution: 'Let\'s Encrypt를 이용한 무료 SSL 인증서 발급 및 자동 갱신 설정, Ingress Controller에 TLS 설정 적용',
+            comparison: '이전: HTTP 환경에서만 동작 → 이후: HTTPS 환경에서 안전한 WebSocket 연결 지원',
+            learning: 'HTTPS 환경에서의 WebSocket 보안 연결 구성 방법과 SSL 인증서 관리의 중요성을 학습'
+          },
+          {
+            problem: 'ArgoCD 배포 오류 문제',
+            background: 'GitOps 파이프라인에서 YAML 파일 구문 오류 및 리소스 충돌로 인한 배포 실패',
+            solution: 'Helm Chart를 이용한 템플릿화, YAML 린터 도구 적용, 단계별 배포 전략 수립',
+            comparison: '이전: 수동 kubectl 배포로 인한 휴먼 에러 → 이후: 자동화된 GitOps 파이프라인으로 안정적 배포',
+            learning: 'GitOps의 장점과 YAML 관리의 중요성, Helm을 통한 Kubernetes 애플리케이션 패키징 방법 습득'
+          },
+          {
+            problem: '제한된 포트 환경에서의 서비스 노출 문제',
+            background: '학원 데이터센터 환경에서 외부 접근 가능한 포트가 10개로 제한되어 다수의 마이크로서비스 노출에 어려움',
+            solution: 'Ingress Controller를 이용한 단일 진입점 구성, 경로 기반 라우팅으로 여러 서비스를 하나의 포트로 통합',
+            comparison: '이전: 각 서비스마다 별도 포트 필요 → 이후: 단일 포트(80/443)로 모든 서비스 접근 가능',
+            learning: 'Ingress Controller의 활용법과 네트워크 제약 환경에서의 아키텍처 설계 능력 향상'
+          },
+          {
+            problem: '리소스 부족으로 인한 Pod 스케줄링 실패',
+            background: '온프레미스 환경의 제한된 리소스로 인해 모든 Pod가 정상적으로 스케줄링되지 않는 문제',
+            solution: 'Resource Requests/Limits 최적화, HPA(Horizontal Pod Autoscaler) 설정, 우선순위 기반 Pod 스케줄링 적용',
+            comparison: '이전: 리소스 과할당으로 인한 불안정한 서비스 → 이후: 효율적인 리소스 관리로 안정적인 서비스 운영',
+            learning: 'Kubernetes 리소스 관리의 중요성과 제한된 환경에서의 최적화 기법 습득'
+          }
+        ]
+      },
+      demoUrl: 'https://coinalarm.click',
       githubUrl: 'https://github.com/Yoonseok-Ji/CoinAlarm-Autoever_School_Project',
-      achievements: [
-        '실제 서비스 운영경험 (coinalarm.click)',
-        '10개 마이크로서비스로 구성된 복합 시스템 설계 및 구현',
-        'WebSocket을 통한 실시간 데이터 처리 (지연시간 < 100ms)',
-        'Active-Active 구조로 고가용성 달성'
-      ],
-      reflection: [
-        '짧은 기간, 적은 인원으로 교육과정에서 배운 모든 기술을 적용해보고자 하는 욕심이 있었습니다.',
-        '보안 강화나 성능 최적화보다는 다양한 도구와 기술 스택을 경험하는 데 집중했습니다.',
-        'AWS EKS 대신 서버리스 아키텍처나 관리형 서비스를 활용했다면 더 효율적이었을 것 같습니다.',
-        '온프레미스 환경에서의 추가 실험을 계획했으나, 교육과정 종료로 인한 인프라 정리로 시도하지 못한 아쉬움이 있습니다.',
-        '결과적으로 다양한 기술 스택을 실제 프로젝트에 적용해본 값진 경험이었습니다.'
-      ],
+      technologies: ['AWS EKS', 'Kubernetes', 'Prometheus', 'Grafana'],
       color: '#2563eb'
     }
   };
@@ -242,6 +312,30 @@ const ProjectDetail = () => {
           <div className="project-info">
             <h1 className="project-title">{project.title}</h1>
             <p className="project-subtitle">{project.subtitle}</p>
+            
+            {/* 프로젝트 기본 정보를 hero 섹션에 포함 */}
+            <div className="project-basic-info">
+              <div className="info-row">
+                <div className="info-item">
+                  <strong>인원:</strong> {project.projectInfo.members}
+                </div>
+                <div className="info-item">
+                  <strong>개발기간:</strong> {project.projectInfo.duration}
+                </div>
+              </div>
+              {project.projectInfo.theme && (
+                <div className="info-item theme">
+                  <strong>주제:</strong> {project.projectInfo.theme}
+                </div>
+              )}
+              {project.demoUrl && (
+                <div className="demo-link">
+                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="demo-btn">
+                    🌐 coinalarm.click
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="imac-mockup">
@@ -254,7 +348,7 @@ const ProjectDetail = () => {
                     <span className="btn-maximize"></span>
                   </div>
                   <div className="address-bar">
-                    <span>{project.title.toLowerCase()}.com</span>
+                    <span>{project.demoUrl ? project.demoUrl.replace('https://', '') : project.title.toLowerCase() + '.com'}</span>
                   </div>
                 </div>
                 <div className="website-preview">
@@ -269,89 +363,136 @@ const ProjectDetail = () => {
 
         <div className="project-content">
           <div className="content-grid">
-            {/* 프로젝트 정보 */}
-            <section className="project-section">
-              <h2>프로젝트 정보</h2>
-              <div className="project-info-grid">
-                <div className="info-item">
-                  <strong>프로젝트명:</strong> {project.projectInfo.name}
-                </div>
-                <div className="info-item">
-                  <strong>개발 기간:</strong> {project.projectInfo.duration}
-                </div>
-                <div className="info-item">
-                  <strong>참여 인원:</strong> {project.projectInfo.members}
-                </div>
-                <div className="info-item">
-                  <strong>플랫폼:</strong> {project.projectInfo.platform}
-                </div>
-              </div>
-            </section>
+            {/* CoinAlarm 프로젝트의 새로운 구조 */}
+            {projectId === 'autoalarm' && (
+              <>
+                {/* 아키텍처 */}
+                <section className="project-section full-width">
+                  <h2>{project.architecture.title}</h2>
+                  <p className="section-description">{project.architecture.description}</p>
+                  <ul className="architecture-details">
+                    {project.architecture.details.map((detail, index) => (
+                      <li key={index}>{detail}</li>
+                    ))}
+                  </ul>
+                  {architectureImage && (
+                    <div className="image-container">
+                      <img 
+                        src={architectureImage} 
+                        alt="시스템 아키텍처" 
+                        className="section-image"
+                      />
+                    </div>
+                  )}
+                </section>
 
-            {/* 핵심 기능 */}
-            {project.coreFeatures && (
-              <section className="project-section">
-                <h2>핵심 기능</h2>
-                <ul className="features-list">
-                  {project.coreFeatures.map((feature, index) => (
-                    <li key={index}>{feature}</li>
+                {/* 서비스 플로우 */}
+                <section className="project-section full-width">
+                  <h2>{project.serviceFlow.title}</h2>
+                  <ol className="service-flow-steps">
+                    {project.serviceFlow.steps.map((step, index) => (
+                      <li key={index}>{step}</li>
+                    ))}
+                  </ol>
+                  {serviceFlowImage && (
+                    <div className="image-container">
+                      <img 
+                        src={serviceFlowImage} 
+                        alt="서비스 플로우" 
+                        className="section-image"
+                      />
+                    </div>
+                  )}
+                </section>
+
+                {/* 나의 역할 */}
+                <section className="project-section full-width">
+                  <h2>{project.myRole.title}</h2>
+                  {project.myRole.details.map((roleCategory, index) => (
+                    <div key={index} className="role-category">
+                      <h3>{roleCategory.category}</h3>
+                      <ul className="role-tasks">
+                        {roleCategory.tasks.map((task, taskIndex) => (
+                          <li key={taskIndex}>{task}</li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
-              </section>
+                </section>
+
+                {/* 트러블 슈팅 */}
+                <section className="project-section full-width">
+                  <h2>{project.troubleShooting.title}</h2>
+                  {project.troubleShooting.cases.map((troubleCase, index) => (
+                    <div key={index} className="trouble-case">
+                      <h3>{troubleCase.problem}</h3>
+                      <div className="trouble-details">
+                        <div className="trouble-item">
+                          <strong>문제 배경:</strong>
+                          <p>{troubleCase.background}</p>
+                        </div>
+                        <div className="trouble-item">
+                          <strong>해결 방법:</strong>
+                          <p>{troubleCase.solution}</p>
+                        </div>
+                        <div className="trouble-item">
+                          <strong>이전과 비교:</strong>
+                          <p>{troubleCase.comparison}</p>
+                        </div>
+                        <div className="trouble-item">
+                          <strong>해당 경험을 통해 알게된 점:</strong>
+                          <p>{troubleCase.learning}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </section>
+              </>
             )}
 
-            {/* 아키텍처 */}
-            <section className="project-section full-width">
-              <h2>아키텍처</h2>
-              {projectId === 'autoalarm' && architectureImage ? (
-                <div className="image-container">
-                  <img 
-                    src={architectureImage} 
-                    alt="시스템 아키텍처" 
-                    className="section-image"
-                  />
-                </div>
-              ) : (
-                <div className="architecture">
-                  <p>{project.architecture}</p>
-                </div>
-              )}
-            </section>
+            {/* 다른 프로젝트들의 기존 구조 유지 */}
+            {projectId !== 'autoalarm' && (
+              <>
+                {/* 핵심 기능 */}
+                {project.coreFeatures && (
+                  <section className="project-section">
+                    <h2>핵심 기능</h2>
+                    <ul className="features-list">
+                      {project.coreFeatures.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
 
-            {/* 나의 역할 */}
-            {project.myRole && (
-              <section className="project-section full-width">
-                <h2>나의 역할</h2>
-                <ul className="role-list">
-                  {project.myRole.map((role, index) => (
-                    <li key={index}>{role}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
+                {/* 아키텍처 */}
+                <section className="project-section full-width">
+                  <h2>아키텍처</h2>
+                  <div className="architecture">
+                    <p>{project.architecture}</p>
+                  </div>
+                </section>
 
-            {/* 주요 성과 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && project.achievements && (
-              <section className="project-section">
-                <h2>주요 성과</h2>
-                <ul className="achievements-list">
-                  {project.achievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
+                {/* 서비스 플로우 */}
+                <section className="project-section full-width">
+                  <h2>서비스 플로우</h2>
+                  <div className="service-flow">
+                    <p>{project.serviceFlow}</p>
+                  </div>
+                </section>
 
-            {/* 나의 소회 (CoinAlarm만) */}
-            {projectId === 'autoalarm' && project.reflection && (
-              <section className="project-section">
-                <h2>나의 소회</h2>
-                <ul className="reflection-list">
-                  {project.reflection.map((thought, index) => (
-                    <li key={index}>{thought}</li>
-                  ))}
-                </ul>
-              </section>
+                {/* 나의 역할 */}
+                {project.myRole && (
+                  <section className="project-section full-width">
+                    <h2>나의 역할</h2>
+                    <ul className="role-list">
+                      {project.myRole.map((role, index) => (
+                        <li key={index}>{role}</li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </>
             )}
 
             {/* CoinAlarm 전용 서비스 플로우 섹션 */}

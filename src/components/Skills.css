@@ -18,12 +18,6 @@
 .skill-item {
   border-left: 4px solid #2563eb;
   padding-left: 2rem;
-  transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-  border-left-color: #1d4ed8;
-  transform: translateX(4px);
 }
 
 .skill-header {
