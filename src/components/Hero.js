@@ -41,8 +41,8 @@ const Hero = () => {
               </div>
               
               <div className="hero-description">
-                <p>새로운 기술을 두려워하지 않고, 빠르게 변화하는 환경에서 성장을 즐기며,<br />
-                팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다.</p>
+                <p>프론트엔드 개발자로 시작해 클라우드와 DevOps에 매력을 느껴 성장 중인 개발자입니다.<br />
+                새로운 기술을 배우고 적용하는 것을 즐기며, 팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다.</p>
               </div>
             </div>
           </motion.div>
@@ -72,10 +72,10 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="char-item">
-                  <div className="char-icon">📝</div>
+                  <div className="char-icon">😊</div>
                   <div className="char-text">
-                    <h4>경험 공유와 기록</h4>
-                    <p>학습하고 경험한 것들을 블로그에 기록하며, 지식을 공유하고 함께 성장하는 것을 추구합니다.</p>
+                    <h4>긍정적인 마인드</h4>
+                    <p>어려운 상황에서도 해결책을 찾는 데 집중하며, 긍정적인 태도로 팀 분위기를 밝게 만들어갑니다.</p>
                   </div>
                 </div>
               </div>
