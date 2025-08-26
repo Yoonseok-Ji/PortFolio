@@ -79,6 +79,11 @@
   top: 0;
 }
 
+.skill-description li strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .skills {
     padding: 3rem 0;
