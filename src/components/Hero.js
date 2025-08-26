@@ -1,14 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './Hero.css';
 
 const Hero = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,11 +13,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-content">
-          <motion.div 
-            className="profile-section"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <div className="profile-section">
           >
             <div className="profile-left">
               <div className="profile-image">
@@ -45,15 +34,10 @@ const Hero = () => {
                 새로운 기술을 배우고 적용하는 것을 즐기며, 팀과의 소통과 협업을 통해 긍정적인 에너지를 나누는 것을 좋아합니다.</p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* About Me 섹션 통합 */}
-          <motion.div
-            ref={ref}
-            className="about-section"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div className="about-section">
           >
             <div className="characteristics">
               <div className="char-grid">
@@ -80,7 +64,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <div className="education-section">
             <h2>학력 및 이력</h2>

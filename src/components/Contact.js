@@ -1,14 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './Contact.css';
 
 const Contact = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   const contactInfo = [
     {
       icon: '📧',
@@ -50,11 +43,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
-      <motion.div
-        ref={ref}
-        className="contact-container"
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      <div className="contact-container">
         transition={{ duration: 0.6 }}
       >
         <h2 className="section-title">Contact</h2>
@@ -93,7 +82,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

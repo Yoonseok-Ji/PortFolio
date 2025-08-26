@@ -1,23 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './About.css';
 
 const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   return (
     <section id="about" className="about">
-      <motion.div
-        ref={ref}
-        className="about-container"
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="about-container">
         <h2 className="section-title">About Me</h2>
         
         <div className="about-content">
@@ -58,7 +45,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,15 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 
 const Projects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   const navigate = useNavigate();
 
   const projects = [
@@ -45,13 +38,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
-      <motion.div
-        ref={ref}
-        className="projects-container"
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="projects-container">
         <h2 className="section-title">Projects</h2>
 
         <div className="projects-grid">
@@ -89,7 +76,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
