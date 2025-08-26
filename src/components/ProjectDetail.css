@@ -723,3 +723,68 @@
   background: #059669;
   transform: translateY(-1px);
 }
+/* 깔끔한 GitHub 링크 스타일 */
+.github-link {
+  margin-top: 1.5rem;
+}
+
+.github-btn {
+  display: inline-block;
+  background: #24292e;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.github-btn:hover {
+  background: #1b1f23;
+  transform: translateY(-1px);
+}
+
+/* 간단한 역할 리스트 */
+.simple-role-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.simple-role-list li {
+  background: #f8fafc;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* 간단한 트러블 슈팅 스타일 */
+.simple-trouble-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.simple-trouble-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #dc2626;
+}
+
+.simple-trouble-item h4 {
+  color: #dc2626;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+}
+
+.simple-trouble-item p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
