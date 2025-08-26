@@ -44,8 +44,6 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        transition={{ duration: 0.6 }}
-      >
         <h2 className="section-title">Contact</h2>
 
         <div className="contact-content">
